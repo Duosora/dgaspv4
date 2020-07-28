@@ -191,7 +191,7 @@ class PinglistSettings extends React.Component {
 						</Col>
 					</Row>
 					
-					<Row>
+					<Row className="pinglistBtnsRow">
 						<Col>
 							<Button
 								className="GenerateButton"
