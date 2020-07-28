@@ -11,3 +11,206 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.keywordContainer Button {
+	margin: 10px;
+}
+
+.keywordContainer {
+	max-height: 320px;
+	min-height: 320px;
+	overflow-y: scroll;
+}
+
+.keywordButton {
+	text-align: center;
+	width: 95%;
+}
+
+.HeaderRow, .PinglistCol {
+  text-align: center;
+}
+
+.rulePosition {
+	display: block;
+	min-height: 14px;
+}
+
+.RulesCol h1:first-child {
+	margin:0;
+	padding:0;
+}
+
+.HeaderRow {
+	background: #000;
+	margin-bottom: 5px;
+}
+
+.HeaderContent {
+	padding: 15px 0;
+}
+
+.App {
+	/* The most 'parent' layer which is overlaid by any 'child' layer, but contains them. */
+	background-color: #b8d8e8; /* Background color */
+	color: #000000; /* Text color */
+}
+
+.HeaderContent {
+	/* The layer that contains the logo. */
+	background-color: #41999e;
+	color: #000000;
+}
+
+.ContentRow {
+	/* The layer that contains both rules and pinglist layers. Experiment to see what it influences. */
+	background-color: #ffffff;
+	color: #000000;
+}
+
+.RulesCol {
+	/* The rules layer. */
+	background-color: #b8d8e8;
+	color: #000000;
+}
+
+.RulesRow {
+	/* The rules layer. */
+	background-color: #ffffff;
+	color: #000000;
+}
+
+.rulePosition {
+	/* Every single rule row. */
+	background-color: #e2f3ff;
+	color: #000000;
+}
+
+.PinglistCol {
+	/* The pinglist layer. */
+	background-color: #fff;
+	color: #000000;
+}
+
+.PinglistCol {
+	/* The pinglist layer. */
+	background-color: #e2f3ff;
+	color: #000000;
+}
+
+.PinglistSelectors {
+	/* The layer of pinglist selectors ([Breed/Gender], [Type], [Are you selling?]). */
+	background-color: #e2f3ff;
+	color: #000000;
+}
+
+.keywordContainer {
+	/* The layer which contains keyword buttons/boxes. */
+	background-color: #ffffff;
+	color: #000000;
+}
+
+.keywordContainer {
+	/* The layer which contains keyword buttons/boxes. */
+	background-color: #b8d8e8;
+	color: #000000;
+}
+
+.keywordButton {
+	/* Every single keyword box/button */
+	/* State: usual. */
+	background-color: #fafdff;
+	color: #000000;
+}
+
+.keywordButton:disabled {
+	/* Every single keyword box/button */
+	/* State: disabled. */
+	background-color: #fff;
+	color: #000000;
+}
+
+.keywordButton:hover {
+	/* Every single keyword box/button */
+	/* State: cursor over the button. */
+	background-color: #e2f3ff;
+	color: #000000;
+}
+
+.keywordButton:active {
+	/* Every single keyword box/button */
+	/* State: button is being clicked. */
+	background-color: #41999e;
+	color: #fff;
+}
+.GenerateButton {
+	/* Generate Pinglist Button */
+	/* State: usual. */
+	background-color: #fff;
+	color: #000000;
+}
+
+.GenerateButton:disabled {
+	/* Generate Pinglist Button */
+	/* State: disabled. */
+	background-color: #d0dbe3;
+	color: #555;
+}
+
+.GenerateButton:hover {
+	/* Generate Pinglist Button */
+	/* State: cursor over the button. */
+	background-color: #b8d8e8;
+	color: #000000;
+}
+
+.GenerateButton:active {
+	/* Generate Pinglist Button */
+	/* State: button is being clicked. */
+	background-color: #00f;
+	color: #000000;
+}
+
+.CopyButton {
+	/* Copy Pinglist Button */
+	/* State: usual. */
+	background-color: #ffffff;
+	color: #000000;
+}
+
+.CopyButton:disabled {
+	/* Copy Pinglist Button */
+	/* State: disabled. */
+	background-color: #ffffff;
+	color: #000000;
+}
+
+.CopyButton:hover {
+	/* Copy Pinglist Button */
+	/* State: cursor over the button. */
+	background-color: #b8d8e8;
+	color: #000000;
+}
+
+.CopyButton:active {
+	/* Copy Pinglist Button */
+	/* State: button is being clicked. */
+	background-color: #ffffff;
+	color: #000000;
+}
+
+.ConsentSpan {
+	/* Consent text layer */
+	background-color: #ffffff;
+	color: #000000;
+}
+
+.ReadyPinglistServeContainer {
+	/* The textarea where the generated pinglist is put. */
+	background-color: #fafdff;
+	color: #000000;
+}
+
+a:link{
+    color:#109cc8;
+}

@@ -1,11 +1,11 @@
 import React from 'react';
+import logo from './../logo.png';
 
 class Header extends React.Component {
 	render() {
 		return (
 			<div>
-				<h1>GASP</h1>
-				<h2>Optimized for Sheets v4 by Duosora</h2>
+				<img alt="General Accent & Skin Pinglists - Logo" src={logo} />
 			</div>
 		);
 	}
