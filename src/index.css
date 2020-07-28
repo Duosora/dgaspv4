@@ -202,10 +202,18 @@ a:link{
     color:#109cc8;
 }
 
-.RulesCol, .PinglistCol {
-	height: 100%;
+.RulesCol {
+	padding: 0 15px;
+}
+
+.PinglistCol {
 	padding: 15px;
-	margin: 0 15px;
+}
+
+.RulesCol, .PinglistCol {
+	display: block;
+	border-left: 5px solid #b8d8e8;
+	border-right: 5px solid #b8d8e8;
 }
 
 .RulesCol ul {
