@@ -64,25 +64,18 @@ code {
 
 .ContentRow {
 	/* The layer that contains both rules and pinglist layers. Experiment to see what it influences. */
-	background-color: #ffffff;
+	background-color: #e2f3ff;
 	color: #000000;
 }
 
 .RulesCol {
 	/* The rules layer. */
-	background-color: #b8d8e8;
-	color: #000000;
-}
-
-.RulesRow {
-	/* The rules layer. */
-	background-color: #ffffff;
 	color: #000000;
 }
 
 .rulePosition {
 	/* Every single rule row. */
-	background-color: #e2f3ff;
+	
 	color: #000000;
 }
 
@@ -199,12 +192,6 @@ code {
 	color: #000000;
 }
 
-.ConsentSpan {
-	/* Consent text layer */
-	background-color: #ffffff;
-	color: #000000;
-}
-
 .ReadyPinglistServeContainer {
 	/* The textarea where the generated pinglist is put. */
 	background-color: #fafdff;
@@ -213,4 +200,47 @@ code {
 
 a:link{
     color:#109cc8;
+}
+
+.RulesCol, .PinglistCol {
+	height: 100%;
+	padding: 15px;
+}
+
+.RulesCol ul {
+	padding: 25px;
+}
+
+/*
+	I would like a bit of your important attention.
+	To make a button out of any link, you can use:
+	padding: Tpx Rpx Bpx Lpx;       replace T, R, B, L with the amount of pixels you want.
+	background-color: #ffffff;			replace #ffffff with your own hex color.
+	border: Wpx solid #000000;			replace W with button outline's width, #000000 with your hex color.
+	border-radius: Npx;							replace N with how many pixels you want to dedicate to making edges smoother.
+	color: #999999;									the color of the button's text; replace #999999 with your own hex color.
+	
+	Please, pretty PLEASE, don't repeat padding in all four link styles. mentioning in a:link is enough.
+*/
+
+.RulesCol a:link {
+	/* Untouched state of the button. */
+	display: inline-block;
+	padding: 30px 30px 30px 30px;
+	background-color: #ffffff;
+	border: 5px solid #000000;
+	border-radius: 15px;
+	color: #999999;
+}
+
+.RulesCol a:visited {
+	/* If the button was already clicked in the past. */
+	
+}
+
+.RulesCol a:hover {
+	/* 'Cursor is over' state of the button. */
+	text-decoration: none;
+	background-color: #aaaaaa;
+	color: #333333;
 }

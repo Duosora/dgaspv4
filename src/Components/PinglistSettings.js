@@ -18,7 +18,7 @@ class PinglistSettings extends React.Component {
 	}
 	
 	updateFilter = (filterKey,filterValue) => {
-		this.setState({[filterKey]: filterValue});
+		this.setState({[filterKey]: filterValue, currentPinglist: ''});
 	}
 	
 	onChangeHandler = (event) => {
@@ -119,19 +119,19 @@ class PinglistSettings extends React.Component {
 	
 	generatePinglist = () => {
 		const pinglistArray = [];
-		
-		this.setState({currentPinglist: ''},() => {
-			globalState.masterList.forEach(currentUser => {
-				if(this.userWantsPings(currentUser[0].trim())) {
-					if(this.checkPinglistUser(currentUser)) {
-						// user matches the filters, include into pinglist.
-						pinglistArray.push('@'+currentUser[0].trim());
-					}
+
+		globalState.masterList.forEach(currentUser => {
+			if(this.userWantsPings(currentUser[0].trim())) {
+				if(this.checkPinglistUser(currentUser)) {
+					// user matches the filters, include into pinglist.
+					pinglistArray.push('@'+currentUser[0].trim());
 				}
-			});
-			
-			this.setState({currentPinglist: pinglistArray.join(' ')});
+			}
 		});
+		
+		let pinglistString = "[center][url=http://www1.flightrising.com/forums/skin/2480522]Please click here to go to the GASP thread![/url][br][br]Keywords selected: "+this.state.selectedBreed+', '+this.state.selectedKeywords.join(', ')+"[br][br]- Pings auto-hidden -[/center][br][size=0][size=0][size=0][size=0][size=0]"+pinglistArray.join(' ')+"[/size][/size][/size][/size][/size]";
+			
+		this.setState({currentPinglist: pinglistString});
 	}
 	
 	render () {
@@ -208,12 +208,6 @@ class PinglistSettings extends React.Component {
 							<CopyToClipboard text={this.state.currentPinglist}>
 								<Button className="CopyButton" color="success" size="lg">Copy Pinglist</Button>
 							</CopyToClipboard>
-						</Col>
-					</Row>
-					
-					<Row>
-						<Col className="ConsentSpan">
-							<em>{"By copying this pinglist, you are aware that this pinglist is generated based on your needs. Before copying the pinglist, triple check the fields, and correct any mistakes you might have made in the process to avoid mispings. Thank you for understanding!"}</em>
 						</Col>
 					</Row>
 					

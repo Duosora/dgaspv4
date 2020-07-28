@@ -5,7 +5,9 @@ class Header extends React.Component {
 	render() {
 		return (
 			<div>
-				<img alt="General Accent & Skin Pinglists - Logo" src={logo} />
+				<a rel="noopener noreferrer" target="_blank" href="http://www1.flightrising.com/forums/skin/2480522">
+					<img alt="General Accent & Skin Pinglists - Logo" src={logo} />
+				</a>
 			</div>
 		);
 	}
