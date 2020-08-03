@@ -52,10 +52,6 @@ class App extends React.Component {
 	
 	// I'm dropping a note here that all other components will take that sheets did successfully load for granted due to them being loaded only when the sheets are loaded.
   render() {
-		if(this.state.sheetsLoaded) {
-			console.log(globalState.siteStatus);
-		}
-		
 		return this.state.sheetsLoaded ? this.state.maintenanceMode ? (
 			<div>
 				<MaintenanceMode />
