@@ -15,7 +15,9 @@ class App extends React.Component {
 	}
 	
 	checkLoading = () => {
-		console.log(globalState.siteStatus[0][0]);
+		if(globalState.siteStatus.length) {
+			console.log(globalState.siteStatus[0][0]);
+		}
 		
 		this.setState({
 			sheetsLoaded: globalState.isLoaded(),
