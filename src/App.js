@@ -14,14 +14,29 @@ class App extends React.Component {
 		this.state = { sheetsLoaded: false, maintenanceMode: false }
 	}
 	
-	checkLoading = () => {
-		if(globalState.siteStatus.length) {
-			console.log(globalState.siteStatus[0][0]);
+	inArray(whichArray,whichValue,deep=false) {
+		let finalResult = whichArray.includes(whichValue);
+		
+		// If the value is found, there is no need for deep search.
+		if(!finalResult) {
+			if(deep) {
+				whichArray.forEach(e => {
+					if(Array.isArray(e)) {
+						if(!finalResult) {
+							finalResult = this.inArray(e,whichValue,true);
+						}
+					}
+				});
+			}
 		}
 		
+		return finalResult;
+	}
+	
+	checkLoading = () => {
 		this.setState({
 			sheetsLoaded: globalState.isLoaded(),
-			maintenanceMode: globalState.siteStatus.length ? Boolean(globalState.siteStatus[0][0] !== "Online") : false
+			maintenanceMode: globalState.siteStatus.length ? this.inArray(globalState.siteStatus,"Online",true) : false
 		});
 		
 		if(!globalState.isLoaded()) {
