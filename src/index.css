@@ -237,26 +237,30 @@ a:link{
 	Please, pretty PLEASE, don't repeat padding in all four link styles. mentioning in a:link is enough.
 */
 
-.RulesCol a:link {
+.RulesCol a:link, .RulesCol a:visited {
 	/* Untouched state of the button. */
-	display: inline-block;
-	padding: 30px 30px 30px 30px;
-	background-color: #ffffff;
-	border: 5px solid #000000;
-	border-radius: 15px;
-	color: #999999;
-}
-
-.RulesCol a:visited {
-	/* If the button was already clicked in the past. */
-	
+	display:inline-block;
+	padding:0.3em 1.2em;
+	margin: 5px 0.1em 5px 0;
+	border:0.16em solid rgba(255,255,255,0);
+	border-radius:1em;
+	box-sizing: border-box;
+	text-decoration:none;
+	font-family:'Roboto',sans-serif;
+	font-weight:300;
+	color: #FFF;
+	text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+	text-align:center;
+	transition: all 0.2s;
+	background-color:#4e9af1;
+	text-align: center;
 }
 
 .RulesCol a:hover {
 	/* 'Cursor is over' state of the button. */
 	text-decoration: none;
-	background-color: #aaaaaa;
-	color: #333333;
+	border-color: rgba(255,255,255,1);
+	border-radius:2em;
 }
 
 .pinglistBtnsRow {

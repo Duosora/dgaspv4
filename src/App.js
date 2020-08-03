@@ -17,7 +17,7 @@ class App extends React.Component {
 	checkLoading = () => {
 		this.setState({
 			sheetsLoaded: globalState.isLoaded(),
-			maintenanceMode: globalState.siteStatus.length ? Boolean(globalState.siteStatus[0] != 1) : false
+			maintenanceMode: globalState.siteStatus.length ? Boolean(globalState.siteStatus[0][0] !== "Online") : false
 		});
 		
 		if(!globalState.isLoaded()) {
