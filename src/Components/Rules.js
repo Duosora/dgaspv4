@@ -6,12 +6,13 @@ const Rules = () => {
 		let	ruleText = item[1];
 		
 		if(ruleText !== undefined) {
+			if(ruleText.startsWith('-')) {
+				ruleText = "<br/>";
+			}
 			if(item[0].startsWith('gasp_')) {			
 				if(ruleText.startsWith('• ')) {
 					ruleText = "<li>"+ruleText.substring(2)+"</li>";
 				}
-				
-				ruleText+="<br/>";
 				
 				return (ruleText !== "-<br/>") ? (
 					<span key={index} className="rulePosition" dangerouslySetInnerHTML={{ __html: ruleText}}></span>

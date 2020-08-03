@@ -43,6 +43,10 @@ code {
 	min-height: 14px;
 }
 
+.rulePosition li {
+	margin-bottom: 7px;
+}
+
 .RulesCol h1:first-child {
 	margin:0;
 	padding:0;
@@ -300,4 +304,8 @@ a:link{
 .maintenancePage div h2 {
 	font-weight: 800;
 	font-size: 3em;
+}
+
+.container h4 {
+	margin: 15px 0;
 }
