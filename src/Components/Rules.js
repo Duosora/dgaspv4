@@ -7,12 +7,13 @@ const Rules = () => {
 		
 		if(ruleText !== undefined) {
 			if(item[0].startsWith('gasp_')) {			
-				console.log(item[1]);
 				if(ruleText.startsWith('• ')) {
 					ruleText = "<li>"+ruleText.substring(2)+"</li>";
 				}
 				
-				return (ruleText !== "-") ? (
+				ruleText+="<br/>";
+				
+				return (ruleText !== "-<br/>") ? (
 					<span key={index} className="rulePosition" dangerouslySetInnerHTML={{ __html: ruleText}}></span>
 				) : <span key={index}></span>;
 			}

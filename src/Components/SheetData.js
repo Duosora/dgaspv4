@@ -4,13 +4,14 @@ import { globalState } from './GlobalState';
 
 const API_KEY  			 = 'AIzaSyDGLVvBm5uNAMlLEV1q-h9Gpu1misQg6I8',
 			RULES_SHEET_ID = '1Kh5Fd40b-dXtLtCPNTuLHd_fwVC8I9Dvl3fO5cWmogA',
-			PINGS_SHEET_ID = '1eX0iu8pFksHIqu66dFc3HjsGwLg6c8ZZ9Q-67MuAQPk',
+			PINGS_SHEET_ID = '1KGAbuq5rwbSWSLmTOeL8ng8qrprK1KfdJu_Rf_loBS8',
 			FETCH_POINTS   = {
 				masterList	  : [PINGS_SHEET_ID,"Master List","A2:F"],
 				doNotPingList : [PINGS_SHEET_ID,"Do not ping","A2:A"],
 				rulesData			: [RULES_SHEET_ID,"Gasp Translations","A:B"],
 				keywordsData	: [PINGS_SHEET_ID,"Keywords","A2:A"],
-				breedsData		:	[PINGS_SHEET_ID,"Breed","A2:A"]
+				breedsData		:	[PINGS_SHEET_ID,"Breed","A2:A"],
+				siteStatus		:	[PINGS_SHEET_ID,"Status","A1:A"]
 			};
 
 const getSheetValues = async (sheetID,tabName,cellRange) => {
@@ -49,6 +50,7 @@ const SheetData = () => {
 	processSheetEntries(useQuery(FETCH_POINTS.rulesData,getSheetValues)    ,'rulesData');
 	processSheetEntries(useQuery(FETCH_POINTS.keywordsData,getSheetValues) ,'keywordsData');
 	processSheetEntries(useQuery(FETCH_POINTS.breedsData,getSheetValues)   ,'breedsData');
+	processSheetEntries(useQuery(FETCH_POINTS.siteStatus,getSheetValues)   ,'siteStatus');
 	
 	return <></>;
 }

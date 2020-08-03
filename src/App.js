@@ -4,18 +4,20 @@ import Header from './Components/Header';
 import Rules from './Components/Rules';
 import SheetData from './Components/SheetData';
 import PinglistGen from './Components/PinglistGen';
+import MaintenanceMode from './Components/MaintenanceMode';
 import { globalState } from './Components/GlobalState';
 
 class App extends React.Component {
 	constructor(props) {
 		super(props);
 		
-		this.state = { sheetsLoaded: false }
+		this.state = { sheetsLoaded: false, maintenanceMode: false }
 	}
 	
 	checkLoading = () => {
 		this.setState({
-			sheetsLoaded: globalState.isLoaded()
+			sheetsLoaded: globalState.isLoaded(),
+			maintenanceMode: globalState.siteStatus.length ? Boolean(globalState.siteStatus[0] != 1) : false
 		});
 		
 		if(!globalState.isLoaded()) {
@@ -31,7 +33,15 @@ class App extends React.Component {
 	
 	// I'm dropping a note here that all other components will take that sheets did successfully load for granted due to them being loaded only when the sheets are loaded.
   render() {
-		return this.state.sheetsLoaded ? (
+		if(this.state.sheetsLoaded) {
+			console.log(globalState.siteStatus);
+		}
+		
+		return this.state.sheetsLoaded ? this.state.maintenanceMode ? (
+			<div>
+				<MaintenanceMode />
+			</div>
+		) : (
 			<div className="App">
 				<Container fluid className="HeaderRow">
 					<Row>
