@@ -12,7 +12,7 @@ class Header extends React.Component {
 				<br/><br/>
 
 				<p>
-					This application is in the process of active development. Please report any bugs or share your opinions on further improvement by messaging <a rel="noopener noreferrer" target="_blank" href="https://www1.flightrising.com/clan-profile/142634">Tiriea</a> on Flight Rising.
+					This application is in the process of active development. Please report any bugs or share your opinions on further improvement by messaging <a rel="noopener noreferrer" target="_blank" href="https://www1.flightrising.com/clan-profile/142634">Tiriea</a> or <a rel="noopener noreferrer" target="_blank" href="https://www1.flightrising.com/clan-profile/355822">Duosora</a> on Flight Rising.
 				</p>
 			</div>
 		);
