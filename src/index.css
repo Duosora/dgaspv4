@@ -318,3 +318,7 @@ a:link{
 .container h4 {
 	margin: 15px 0;
 }
+
+.FooterRow {
+	text-align: center;
+}
