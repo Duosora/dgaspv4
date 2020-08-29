@@ -70,7 +70,16 @@ code {
 .HeaderContent {
 	/* The layer that contains the logo. */
 	background-color: #41999e;
-	color: #000000;
+	color: #fff;
+	font-weight: bold;
+}
+
+.HeaderContent a:link, a:visited, a:active {
+	color: #ffff00;
+}
+
+.HeaderContent a:hover {
+	color: #ffcc00;
 }
 
 .ContentRow {
@@ -86,7 +95,7 @@ code {
 
 .rulePosition {
 	/* Every single rule row. */
-	
+
 	color: #000000;
 }
 
@@ -239,7 +248,7 @@ a:link{
 	border: Wpx solid #000000;			replace W with button outline's width, #000000 with your hex color.
 	border-radius: Npx;							replace N with how many pixels you want to dedicate to making edges smoother.
 	color: #999999;									the color of the button's text; replace #999999 with your own hex color.
-	
+
 	Please, pretty PLEASE, don't repeat padding in all four link styles. mentioning in a:link is enough.
 */
 
