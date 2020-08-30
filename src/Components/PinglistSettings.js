@@ -80,6 +80,20 @@ class PinglistSettings extends React.Component {
 					wantedKeywords			 = this.state.selectedKeywords.filter(e => !userUnwantedKeywords.includes(e)),
 					matchedKeywords			 = Array.from(wantedKeywords).filter(e => userKeywords.includes(e));
 
+		/*
+		if(userData[0].trim() === 'lyricalmyxteries') {
+			console.log('User Keywords:',userKeywords);
+			console.log('User DNPs:',userUnwantedKeywords);
+			console.log('User Wanted Keywords:',wantedKeywords);
+			console.log('User Matched Keywords:',matchedKeywords);
+		}
+		*/
+
+		// v1.001 starrlight's report: if any unwanted keyword got caught, filter out the user.
+		if(wantedKeywords.length !== this.state.selectedKeywords.length) {
+			return false;
+		}
+
 		// If wantedKeywords.length === 0, it means no keywords from filter request are wanted by user.
 		if(wantedKeywords.length === 0) {
 			return false;
