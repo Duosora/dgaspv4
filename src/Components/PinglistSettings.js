@@ -8,6 +8,8 @@ class PinglistSettings extends React.Component {
 	constructor(props) {
 		super(props);
 
+		this.resetting = false;
+
 		this.state = {
 			selectedBreed		 : 0,
 			selectedType		 : 0,
@@ -80,15 +82,6 @@ class PinglistSettings extends React.Component {
 					wantedKeywords			 = this.state.selectedKeywords.filter(e => !userUnwantedKeywords.includes(e)),
 					matchedKeywords			 = Array.from(wantedKeywords).filter(e => userKeywords.includes(e));
 
-		/*
-		if(userData[0].trim() === 'lyricalmyxteries') {
-			console.log('User Keywords:',userKeywords);
-			console.log('User DNPs:',userUnwantedKeywords);
-			console.log('User Wanted Keywords:',wantedKeywords);
-			console.log('User Matched Keywords:',matchedKeywords);
-		}
-		*/
-
 		// v1.001 starrlight's report: if any unwanted keyword got caught, filter out the user.
 		if(wantedKeywords.length !== this.state.selectedKeywords.length) {
 			return false;
@@ -131,8 +124,20 @@ class PinglistSettings extends React.Component {
 		return !this.inArray(globalState.doNotPingList,userName,true);
 	}
 
-	generatePinglist = () => {
+	resetFilters = (e) => {
+		e.target.blur();
+
+		this.resetting = true;
+
+
+
+		this.resetting = false;
+	}
+
+	generatePinglist = (e) => {
 		const pinglistArray = [];
+
+		e.target.blur();
 
 		globalState.masterList.forEach(currentUser => {
 			if(this.userWantsPings(currentUser[0].trim())) {
@@ -143,7 +148,7 @@ class PinglistSettings extends React.Component {
 			}
 		});
 
-		let pinglistString = "[center][url=http://www1.flightrising.com/forums/skin/2480522]Please click here to go to the GASP thread![/url][br][br]Keywords selected: "+this.state.selectedBreed+', '+this.state.selectedType+', '+this.state.selectedKeywords.join(', ')+"[br][br]- Pings auto-hidden -[br][br][b]Note:[/b] The GASP website was recently rewritten, so this pinglist was generated using entirely new code! [b]PLEASE[/b] be sure to let us know if something is off![/center][br][size=0][size=0][size=0][size=0][size=0][color=transparent]"+pinglistArray.join(' ')+"[/color][/size][/size][/size][/size][/size]";
+		let pinglistString = "[center][url=http://www1.flightrising.com/forums/skin/2480522]Please click here to go to the GASP thread![/url][br][br]Keywords selected: "+this.state.selectedBreed+', '+this.state.selectedType+', '+this.state.selectedKeywords.join(', ')+"[br][br]- Pings auto-hidden -[br][br][b]Note:[/b] The GASP website was recently rewritten, so this pinglist was generated using entirely new code! [b]PLEASE[/b] be sure to let us know if something is off![/center][br][size=0][size=0][size=0][size=0][size=0]"+pinglistArray.join(' ')+"[/size][/size][/size][/size][/size]";
 
 		this.setState({currentPinglist: pinglistString});
 	}
@@ -201,27 +206,25 @@ class PinglistSettings extends React.Component {
 
 					<Row>
 						<Col>
-							<KeywordForm onAdjust={this.updateKeywords} />
+							<KeywordForm isReset={this.resetting} onAdjust={this.updateKeywords} />
 						</Col>
 					</Row>
 
 					<Row className="pinglistBtnsRow">
 						<Col>
-							<Button
-								className="GenerateButton"
-								disabled={!this.isGenerationAllowed()}
-								color="warning"
-								size="lg"
-								onClick={this.generatePinglist}
-							>
-								Generate Pinglist
-							</Button>
+							<CopyToClipboard text={this.state.currentPinglist}>
+								<Button
+									className={ this.state.currentPinglist ? 'CopyButton' : 'GenerateButton' }
+									disabled={!this.isGenerationAllowed()}
+									onClick={this.generatePinglist}
+								>
+									{ this.state.currentPinglist ? 'Copy Pinglist' : 'Generate Pinglist' }
+								</Button>
+							</CopyToClipboard>
 						</Col>
 
 						<Col>
-							<CopyToClipboard text={this.state.currentPinglist}>
-								<Button className="CopyButton" color="success" size="lg">Copy Pinglist</Button>
-							</CopyToClipboard>
+							
 						</Col>
 					</Row>
 
