@@ -148,7 +148,7 @@ class PinglistSettings extends React.Component {
 			}
 		});
 
-		let pinglistString = "[center][url=http://www1.flightrising.com/forums/skin/2480522]Please click here to go to the GASP thread![/url][br][br]Keywords selected: "+this.state.selectedBreed+', '+this.state.selectedType+', '+this.state.selectedKeywords.join(', ')+"[br][br]- Pings auto-hidden -[br][br][b]Note:[/b] The GASP website was recently rewritten, so this pinglist was generated using entirely new code! [b]PLEASE[/b] be sure to let us know if something is off![/center][br][size=0][size=0][size=0][size=0][size=0]"+pinglistArray.join(' ')+"[/size][/size][/size][/size][/size]";
+		let pinglistString = "[center][url=http://www1.flightrising.com/forums/skin/2480522]Please click here to go to the GASP thread![/url][br][br]Keywords selected: "+this.state.selectedBreed+', '+this.state.selectedType+', '+this.state.selectedKeywords.join(', ')+"[br][br][b]Note:[/b] The GASP website was recently rewritten, so this pinglist was generated using entirely new code! [b]PLEASE[/b] be sure to let us know if something is off![/center][br][size=0][size=0][size=0][size=0][size=0]"+pinglistArray.join(' ')+"[/size][/size][/size][/size][/size]";
 
 		this.setState({currentPinglist: pinglistString});
 	}
