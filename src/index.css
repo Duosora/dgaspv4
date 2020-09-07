@@ -159,12 +159,12 @@ code {
 
 .GenerateButton {
   text-decoration: none;
-	width: 100%;
+	width: 80%;
   color: #fff;
   font-weight: bold;
   background-color: #538fbe !important;
-  padding: 20px 20px;
-  font-size: 20px;
+	padding: 10px 5px;
+  font-size: 15px;
   border: 1px solid #2d6898 !important;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
@@ -173,11 +173,11 @@ code {
 	-webkit-box-shadow: 0px 6px 0px #2b638f, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
 	-moz-box-shadow: 0px 6px 0px #2b638f, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
 	box-shadow: 0px 6px 0px #2b638f, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
-	background-image: linear-gradient(bottom, rgb(73,132,180) 0%, rgb(97,155,203) 100%);
-  background-image: -o-linear-gradient(bottom, rgb(73,132,180) 0%, rgb(97,155,203) 100%);
-  background-image: -moz-linear-gradient(bottom, rgb(73,132,180) 0%, rgb(97,155,203) 100%);
-  background-image: -webkit-linear-gradient(bottom, rgb(73,132,180) 0%, rgb(97,155,203) 100%);
-  background-image: -ms-linear-gradient(bottom, rgb(73,132,180) 0%, rgb(97,155,203) 100%);
+	background-image: linear-gradient(to top, rgb(73,132,180) 0%, rgb(97,155,203) 100%);
+  background-image: -o-linear-gradient(to top, rgb(73,132,180) 0%, rgb(97,155,203) 100%);
+  background-image: -moz-linear-gradient(to top, rgb(73,132,180) 0%, rgb(97,155,203) 100%);
+  background-image: -webkit-linear-gradient(to top, rgb(73,132,180) 0%, rgb(97,155,203) 100%);
+  background-image: -ms-linear-gradient(to top, rgb(73,132,180) 0%, rgb(97,155,203) 100%);
   background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, rgb(73,132,180)),color-stop(1, rgb(97,155,203)));
 	-webkit-transition: all .1s ease-in-out;
 	-moz-transition: all .2s ease-in-out;
@@ -197,11 +197,11 @@ code {
 }
 
 .GenerateButton:hover:enabled {
-	background-image: linear-gradient(bottom, rgb(79,142,191) 0%, rgb(102,166,214) 100%);
-  background-image: -o-linear-gradient(bottom, rgb(79,142,191) 0%, rgb(102,166,214) 100%);
-  background-image: -moz-linear-gradient(bottom, rgb(79,142,191) 0%, rgb(102,166,214) 100%);
-  background-image: -webkit-linear-gradient(bottom, rgb(79,142,191) 0%, rgb(102,166,214) 100%);
-  background-image: -ms-linear-gradient(bottom, rgb(79,142,191) 0%, rgb(102,166,214) 100%);
+	background-image: linear-gradient(to top, rgb(79,142,191) 0%, rgb(102,166,214) 100%);
+  background-image: -o-linear-gradient(to top, rgb(79,142,191) 0%, rgb(102,166,214) 100%);
+  background-image: -moz-linear-gradient(to top, rgb(79,142,191) 0%, rgb(102,166,214) 100%);
+  background-image: -webkit-linear-gradient(to top, rgb(79,142,191) 0%, rgb(102,166,214) 100%);
+  background-image: -ms-linear-gradient(to top, rgb(79,142,191) 0%, rgb(102,166,214) 100%);
 	background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, rgb(79,142,191)),color-stop(1, rgb(102,166,214)));
 }
 
@@ -209,11 +209,11 @@ code {
 		-webkit-box-shadow: 0px 2px 0px #2b638f, 0px 1px 6px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
 		-moz-box-shadow: 0px 2px 0px #2b638f, 0px 1px 6px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
 		box-shadow: 0px 2px 0px #2b638f, 0px 1px 6px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
-    background-image: linear-gradient(bottom, rgb(88,154,204) 0%, rgb(90,150,199) 100%);
-    background-image: -o-linear-gradient(bottom, rgb(88,154,204) 0%, rgb(90,150,199) 100%);
-    background-image: -moz-linear-gradient(bottom, rgb(88,154,204) 0%, rgb(90,150,199) 100%);
-    background-image: -webkit-linear-gradient(bottom, rgb(88,154,204) 0%, rgb(90,150,199) 100%);
-    background-image: -ms-linear-gradient(bottom, rgb(88,154,204) 0%, rgb(90,150,199) 100%);
+    background-image: linear-gradient(to top, rgb(88,154,204) 0%, rgb(90,150,199) 100%);
+    background-image: -o-linear-gradient(to top, rgb(88,154,204) 0%, rgb(90,150,199) 100%);
+    background-image: -moz-linear-gradient(to top, rgb(88,154,204) 0%, rgb(90,150,199) 100%);
+    background-image: -webkit-linear-gradient(to top, rgb(88,154,204) 0%, rgb(90,150,199) 100%);
+    background-image: -ms-linear-gradient(to top, rgb(88,154,204) 0%, rgb(90,150,199) 100%);
     background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, rgb(88,154,204)),color-stop(1, rgb(90,150,199)));
 		-webkit-transform: translate(0, 4px);
 		-moz-transform: translate(0, 4px);
@@ -236,12 +236,12 @@ code {
 
 .CopyButton {
   text-decoration: none;
-	width: 100%;
+	width: 80%;
   color: #fff;
   font-weight: bold;
   background-color: #3bb78f !important;
-  padding: 20px 20px;
-  font-size: 20px;
+	padding: 10px 5px;
+  font-size: 15px;
   border: 1px solid #0f9167 !important;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
@@ -250,12 +250,12 @@ code {
 	-webkit-box-shadow: 0px 6px 0px #107353, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
 	-moz-box-shadow: 0px 6px 0px #107353, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
 	box-shadow: 0px 6px 0px #107353, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
-	background-image: linear-gradient(bottom, #49d6a9 0%, #0bba6d 74%);
-  background-image: -o-linear-gradient(bottom, #49d6a9 0%, #0bba6d 74%);
-  background-image: -moz-linear-gradient(bottom, #49d6a9 0%, #0bba6d 74%);
-  background-image: -webkit-linear-gradient(bottom, #49d6a9 0%, #0bba6d 74%);
-  background-image: -ms-linear-gradient(bottom, #49d6a9 0%, #0bba6d 74%);
-  background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, #49d6a9),color-stop(1, #0bba6d));
+	background-image: linear-gradient(to top, #0bba6d 0%, #49d6a9 74%);
+  background-image: -o-linear-gradient(to top, #0bba6d 0%, #49d6a9 74%);
+  background-image: -moz-linear-gradient(to top, #0bba6d 0%, #49d6a9 74%);
+  background-image: -webkit-linear-gradient(to top, #0bba6d 0%, #49d6a9 74%);
+  background-image: -ms-linear-gradient(to top, #0bba6d 0%, #49d6a9 74%);
+  background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, #0bba6d),color-stop(1, #49d6a9));
 	-webkit-transition: all .1s ease-in-out;
 	-moz-transition: all .2s ease-in-out;
 	transition: all .2s ease-in-out;
@@ -277,24 +277,24 @@ code {
 	-webkit-box-shadow: 0px 6px 0px #107353, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
 	-moz-box-shadow: 0px 6px 0px #107353, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
 	box-shadow: 0px 6px 0px #107353, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
-	background-image: linear-gradient(bottom, #4ce0b1 0%, #13cf7c 74%);
-  background-image: -o-linear-gradient(bottom, #4ce0b1 0%, #13cf7c 74%);
-  background-image: -moz-linear-gradient(bottom, #4ce0b1 0%, #13cf7c 74%);
-  background-image: -webkit-linear-gradient(bottom, #4ce0b1 0%, #13cf7c 74%);
-  background-image: -ms-linear-gradient(bottom, #4ce0b1 0%, #13cf7c 74%);
-  background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, #4ce0b1),color-stop(1, #13cf7c));
+	background-image: linear-gradient(to top, #13cf7c 0%, #4ce0b1 74%);
+  background-image: -o-linear-gradient(to top, #13cf7c 0%, #4ce0b1 74%);
+  background-image: -moz-linear-gradient(to top, #13cf7c 0%, #4ce0b1 74%);
+  background-image: -webkit-linear-gradient(to top, #13cf7c 0%, #4ce0b1 74%);
+  background-image: -ms-linear-gradient(to top, #13cf7c 0%, #4ce0b1 74%);
+  background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, #13cf7c),color-stop(1, #4ce0b1));
 }
 
 .CopyButton:active:enabled {
 		-webkit-box-shadow: 0px 2px 0px #2b638f, 0px 1px 6px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
 		-moz-box-shadow: 0px 2px 0px #2b638f, 0px 1px 6px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
 		box-shadow: 0px 2px 0px #2b638f, 0px 1px 6px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
-		background-image: linear-gradient(bottom, #3bb78f 0%, #0bab64 74%);
-	  background-image: -o-linear-gradient(bottom, #3bb78f 0%, #0bab64 74%);
-	  background-image: -moz-linear-gradient(bottom, #3bb78f 0%, #0bab64 74%);
-	  background-image: -webkit-linear-gradient(bottom, #3bb78f 0%, #0bab64 74%);
-	  background-image: -ms-linear-gradient(bottom, #3bb78f 0%, #0bab64 74%);
-	  background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, #3bb78f),color-stop(1, #0bab64));
+		background-image: linear-gradient(to top, #0bab64 0%, #3bb78f 74%);
+	  background-image: -o-linear-gradient(to top, #0bab64 0%, #3bb78f 74%);
+	  background-image: -moz-linear-gradient(to top, #0bab64 0%, #3bb78f 74%);
+	  background-image: -webkit-linear-gradient(to top, #0bab64 0%, #3bb78f 74%);
+	  background-image: -ms-linear-gradient(to top, #0bab64 0%, #3bb78f 74%);
+	  background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, #0bab64),color-stop(1, #3bb78f));
 		-webkit-transform: translate(0, 4px);
 		-moz-transform: translate(0, 4px);
 		transform: translate(0, 4px);
@@ -316,26 +316,26 @@ code {
 
 .ResetButton {
   text-decoration: none;
-	width: 100%;
+	width: 80%;
   color: #fff;
   font-weight: bold;
   background-color: #3bb78f !important;
-  padding: 20px 20px;
-  font-size: 20px;
-  border: 1px solid #0f9167 !important;
+	padding: 10px 5px;
+  font-size: 15px;
+  border: 1px solid #880000 !important;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
 	text-shadow: 0px  -1px 0px rgba(0,0,0,.5);
-	-webkit-box-shadow: 0px 6px 0px #E01C34, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
-	-moz-box-shadow: 0px 6px 0px #E01C34, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
-	box-shadow: 0px 6px 0px #E01C34, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
-	background-image: linear-gradient(bottom, #FF0000 0%, #990000 74%);
-  background-image: -o-linear-gradient(bottom, #FF0000 0%, #990000 74%);
-  background-image: -moz-linear-gradient(bottom, #FF0000 0%, #990000 74%);
-  background-image: -webkit-linear-gradient(bottom, #FF0000 0%, #990000 74%);
-  background-image: -ms-linear-gradient(bottom, #FF0000 0%, #990000 74%);
-  background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, #FF0000),color-stop(1, #990000));
+	-webkit-box-shadow: 0px 6px 0px #880000, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+	-moz-box-shadow: 0px 6px 0px #880000, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+	box-shadow: 0px 6px 0px #880000, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+	background-image: linear-gradient(to top, #e01c34 0%, #c4768a 74%);
+  background-image: -o-linear-gradient(to top, #e01c34 0%, #c4768a 74%);
+  background-image: -moz-linear-gradient(to top, #e01c34 0%, #c4768a 74%);
+  background-image: -webkit-linear-gradient(to top, #e01c34 0%, #c4768a 74%);
+  background-image: -ms-linear-gradient(to top, #e01c34 0%, #c4768a 74%);
+  background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, #e01c34),color-stop(1, #c4768a));
 	-webkit-transition: all .1s ease-in-out;
 	-moz-transition: all .2s ease-in-out;
 	transition: all .2s ease-in-out;
@@ -354,26 +354,26 @@ code {
 }
 
 .ResetButton:hover:enabled {
-	-webkit-box-shadow: 0px 6px 0px #E01C34, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
-	-moz-box-shadow: 0px 6px 0px #E01C34, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
-	box-shadow: 0px 6px 0px #E01C34, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
-	background-image: linear-gradient(bottom, #C59169 0%, #D82020 74%);
-  background-image: -o-linear-gradient(bottom, #C59169 0%, #D82020 74%);
-  background-image: -moz-linear-gradient(bottom, #C59169 0%, #D82020 74%);
-  background-image: -webkit-linear-gradient(bottom, #C59169 0%, #D82020 74%);
-  background-image: -ms-linear-gradient(bottom, #C59169 0%, #D82020 74%);
-  background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, #C59169),color-stop(1, #D82020));
+	-webkit-box-shadow: 0px 6px 0px #880000, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+	-moz-box-shadow: 0px 6px 0px #880000, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+	box-shadow: 0px 6px 0px #880000, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+	background-image: linear-gradient(to top, #e84d60 0%, #dea2b1 74%);
+  background-image: -o-linear-gradient(to top, #e84d60 0%, #dea2b1 74%);
+  background-image: -moz-linear-gradient(to top, #e84d60 0%, #dea2b1 74%);
+  background-image: -webkit-linear-gradient(to top, #e84d60 0%, #dea2b1 74%);
+  background-image: -ms-linear-gradient(to top, #e84d60 0%, #dea2b1 74%);
+  background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, #e84d60),color-stop(1, #dea2b1));
 }
 
 .ResetButton:active:enabled {
-		-webkit-box-shadow: 0px 2px 0px #E01C34, 0px 1px 6px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
-		-moz-box-shadow: 0px 2px 0px #E01C34, 0px 1px 6px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
-		box-shadow: 0px 2px 0px #E01C34, 0px 1px 6px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
-		background-image: linear-gradient(bottom, #FF0000 0%, #990000 74%);
-	  background-image: -o-linear-gradient(bottom, #FF0000 0%, #990000 74%);
-	  background-image: -moz-linear-gradient(bottom, #FF0000 0%, #990000 74%);
-	  background-image: -webkit-linear-gradient(bottom, #FF0000 0%, #990000 74%);
-	  background-image: -ms-linear-gradient(bottom, #FF0000 0%, #990000 74%);
+		-webkit-box-shadow: 0px 6px 0px #880000, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+		-moz-box-shadow: 0px 6px 0px #880000, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+		box-shadow: 0px 6px 0px #880000, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+		background-image: linear-gradient(to top, #FF0000 0%, #990000 74%);
+	  background-image: -o-linear-gradient(to top, #FF0000 0%, #990000 74%);
+	  background-image: -moz-linear-gradient(to top, #FF0000 0%, #990000 74%);
+	  background-image: -webkit-linear-gradient(to top, #FF0000 0%, #990000 74%);
+	  background-image: -ms-linear-gradient(to top, #FF0000 0%, #990000 74%);
 	  background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, #FF0000),color-stop(1, #990000));
 		-webkit-transform: translate(0, 4px);
 		-moz-transform: translate(0, 4px);

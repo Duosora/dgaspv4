@@ -3,18 +3,18 @@ import { globalState } from './GlobalState';
 import { Container, Row, Col, Button } from 'reactstrap';
 
 /*
-	<Button className="keywordButton" outline onClick={() => this.onKeywordClick(index)} active={this.state.keywordsChecked.includes(index)} color="info">{item}</Button> 
+	<Button className="keywordButton" outline onClick={() => this.onKeywordClick(index)} active={this.state.keywordsChecked.includes(index)} color="info">{item}</Button>
 */
 
 class KeywordForm extends React.Component {
 	constructor(props) {
 		super(props);
-		
+
 		this.state = {
 			keywordsSelected: []
 		}
 	}
-	
+
 	keywordToggled = (item,index) => {
 		const arrayCopy		 = Array.from(this.state.keywordsSelected);
 		const toggledIndex = arrayCopy.indexOf(item[0]);
@@ -29,12 +29,18 @@ class KeywordForm extends React.Component {
 			}
 		});
 	}
-	
+
 	componentDidMount = () => {
 		this.printKeyword   = this.printKeyword.bind(this);
 		this.keywordToggled = this.keywordToggled.bind(this);
 	}
-	
+
+	componentDidUpdate = () => {
+		if(this.props.isReset) {
+			this.setState({keywordsSelected: []});
+		}
+	}
+
 	printKeyword = (item,index) => {
 		return (
 			<Col key={index}>
@@ -45,11 +51,11 @@ class KeywordForm extends React.Component {
 					active={this.state.keywordsSelected.includes(item[0])}
 				>
 					{item[0]}
-				</Button> 
+				</Button>
 			</Col>
 		);
 	}
-	
+
 	render () {
 		return (
 			<Container className="keywordContainer">

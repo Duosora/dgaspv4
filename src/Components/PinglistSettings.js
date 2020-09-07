@@ -8,14 +8,13 @@ class PinglistSettings extends React.Component {
 	constructor(props) {
 		super(props);
 
-		this.resetting = false;
-
 		this.state = {
 			selectedBreed		 : 0,
 			selectedType		 : 0,
 			selectedResell	 : 0,
 			selectedKeywords : [],
-			currentPinglist	 : ''
+			currentPinglist	 : '',
+			isResetting			 : false
 		}
 	}
 
@@ -127,11 +126,14 @@ class PinglistSettings extends React.Component {
 	resetFilters = (e) => {
 		e.target.blur();
 
-		this.resetting = true;
+		// To reset the keywords.
+		this.setState({isResetting: true},() => {
+			this.setState({isResetting: false});
+		});
 
-
-
-		this.resetting = false;
+		this.updateFilter('selectedBreed',0);
+		this.updateFilter('selectedType',0);
+		this.updateFilter('selectedResell',0);
 	}
 
 	generatePinglist = (e) => {
@@ -148,7 +150,7 @@ class PinglistSettings extends React.Component {
 			}
 		});
 
-		let pinglistString = "[center][url=http://www1.flightrising.com/forums/skin/2480522]Please click here to go to the GASP thread![/url][br][br]Keywords selected: "+this.state.selectedBreed+', '+this.state.selectedType+', '+(this.state.selectedResell === 'Yes' ? 'resell, ' : '')+this.state.selectedKeywords.join(', ')+"[br][br][b]Note:[/b] The GASP website was recently rewritten, so this pinglist was generated using entirely new code! [b]PLEASE[/b] be sure to let us know if something is off![/center][br][size=0][size=0][size=0][size=0][size=0]"+pinglistArray.join(' ')+"[/size][/size][/size][/size][/size]";
+		let pinglistString = "[center][url=http://www1.flightrising.com/forums/skin/2480522]Please click here to go to the GASP thread![/url][br][br]Keywords selected: "+this.state.selectedBreed+', '+this.state.selectedType.substring(0,this.state.selectedType.length-1)+', '+(this.state.selectedResell === 'Yes' ? 'resell, ' : '')+this.state.selectedKeywords.join(', ')+"[br][br][b]Note:[/b] The GASP website was recently rewritten, so this pinglist was generated using entirely new code! [b]PLEASE[/b] be sure to let us know if something is off![/center][br][size=0][size=0][size=0][size=0][size=0]"+pinglistArray.join(' ')+"[/size][/size][/size][/size][/size]";
 
 		this.setState({currentPinglist: pinglistString});
 	}
@@ -161,8 +163,8 @@ class PinglistSettings extends React.Component {
 						<Col>
 							<Input
 								type="select"
-								defaultValue="0"
 								name="selectedBreed"
+								value={this.state.isResetting ? 0 : this.state.selectedBreed}
 								onChange={this.onChangeHandler}
 							>
 								<option disabled value="0">Breed / Gender</option>
@@ -177,22 +179,22 @@ class PinglistSettings extends React.Component {
 						<Col>
 							<Input
 								type="select"
-								defaultValue="0"
 								name="selectedType"
+								value={this.state.isResetting ? 0 : this.state.selectedType}
 								onChange={this.onChangeHandler}
 							>
-								<option value="0" disabled>Type</option>
-								<option value="Accents">Accents</option>
-								<option value="Skins">Skins</option>
-								<option value="Skincents">Skincents</option>
+								<option value="0" disabled>Coverage</option>
+								<option value="Accents">Accent (up to 30%)</option>
+								<option value="Skincents">Skincent (31% to 99%)</option>
+								<option value="Skins">Skin (100%)</option>
 							</Input>
 						</Col>
 
 						<Col>
 							<Input
 								type="select"
-								defaultValue="0"
 								name="selectedResell"
+								value={this.state.isResetting ? 0 : this.state.selectedResell}
 								onChange={this.onChangeHandler}
 							>
 								<option value="0" disabled>Are you a reseller?</option>
@@ -206,7 +208,7 @@ class PinglistSettings extends React.Component {
 
 					<Row>
 						<Col>
-							<KeywordForm isReset={this.resetting} onAdjust={this.updateKeywords} />
+							<KeywordForm isReset={this.state.isResetting} onAdjust={this.updateKeywords} />
 						</Col>
 					</Row>
 
@@ -224,7 +226,12 @@ class PinglistSettings extends React.Component {
 						</Col>
 
 						<Col>
-
+							<Button
+								className="ResetButton"
+								onClick={this.resetFilters}
+							>
+								Reset Filters
+							</Button>
 						</Col>
 					</Row>
 
