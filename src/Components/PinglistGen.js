@@ -122,6 +122,7 @@ class PinglistGen extends React.Component {
 		let eligibleCount = 0;
 		let postLayout = globalState.dynamicFields[0][0];
 		const keywordsDelimiter = globalState.dynamicFields[3][0];
+		const keywordsSeparator = globalState.dynamicFields[4][0];
 		let pinglistString = '';
 		let preparedKeywords = '';
 		const eventTarget = e.target;
@@ -134,7 +135,7 @@ class PinglistGen extends React.Component {
 			if(item.eligible) {
 				let filterFooter = this.getPinglistFilterFooter(index);
 
-				preparedKeywords += filterFooter.filter(x => x!=='').join(', ')+keywordsDelimiter;
+				preparedKeywords += filterFooter.filter(x => x!=='').join(keywordsDelimiter)+keywordsSeparator;
 
 				eligibleCount++;
 			}
@@ -143,7 +144,7 @@ class PinglistGen extends React.Component {
 		if(eligibleCount === 0) {
 			pinglistString = globalState.dynamicFields[7][0];
 		} else {
-			preparedKeywords = preparedKeywords.substring(0,preparedKeywords.length-keywordsDelimiter.length);
+			preparedKeywords = preparedKeywords.substring(0,preparedKeywords.length-keywordsSeparator.length);
 
 			if(eligibleCount === 1) {
 				postLayout = globalState.dynamicFields[49][0];
