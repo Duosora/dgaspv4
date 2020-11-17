@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from './../logo.png';
+import { globalState } from './GlobalState';
 
 class Header extends React.Component {
 	render() {
@@ -12,7 +13,7 @@ class Header extends React.Component {
 				<br/><br/>
 
 				<p>
-					This application is in the process of active development. Please report any bugs or share your opinions on further improvement by messaging either <a rel="noopener noreferrer" target="_blank" href="https://www1.flightrising.com/clan-profile/142634">Tiriea</a>, <a rel="noopener noreferrer" target="_blank" href="https://www1.flightrising.com/clan-profile/239738">starrlight</a>  or <a rel="noopener noreferrer" target="_blank" href="https://www1.flightrising.com/clan-profile/355822">Duosora</a> on Flight Rising.
+					<span dangerouslySetInnerHTML={{ __html: globalState.dynamicFields[8][0]}}></span>
 				</p>
 			</div>
 		);

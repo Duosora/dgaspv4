@@ -5,7 +5,10 @@ import Rules from './Components/Rules';
 import SheetData from './Components/SheetData';
 import PinglistGen from './Components/PinglistGen';
 import MaintenanceMode from './Components/MaintenanceMode';
+import './Styles/App.scss';
 import { globalState } from './Components/GlobalState';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleUp } from '@fortawesome/free-solid-svg-icons';
 
 class App extends React.Component {
 	constructor(props) {
@@ -41,13 +44,42 @@ class App extends React.Component {
 
 		if(!globalState.isLoaded()) {
 			setTimeout(this.checkLoading,500);
+		} else {
+			//this.setState({maintenanceMode: true});
+		}
+	}
+
+	goBackTop = (e = false) => {
+		window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+		if(e) {
+			e.preventDefault();
+		}
+	}
+
+	handleScroll = () => {
+		const scrollDepth  = window.scrollY;
+		const scrollButton = document.getElementById('scrollToTopButton');
+
+		if(scrollButton !== null) {
+			if(scrollDepth > 300) {
+				scrollButton.classList.add("show");
+			} else {
+				scrollButton.classList.remove("show");
+			}
 		}
 	}
 
 	componentDidMount = () => {
 		this.checkLoading = this.checkLoading.bind(this);
+		this.goBackTop    = this.goBackTop.bind(this);
+
+		window.addEventListener('scroll', this.handleScroll, true);
 
 		this.checkLoading();
+	}
+
+	componentWillUnmount = () => {
+		window.removeEventListener('scroll',this.handleScroll);
 	}
 
 	// I'm dropping a note here that all other components will take that sheets did successfully load for granted due to them being loaded only when the sheets are loaded.
@@ -65,12 +97,16 @@ class App extends React.Component {
 				</Container>
 
 				<Container fluid className="ContentRow">
-					<Row xs="1" sm="1" md="2">
-						<Col className="RulesCol">
-							<Rules />
+					<Row xs={"1"} sm={"1"} md={"2"} lg={"2"} xl={"2"}>
+						<Col>
+							<div className="RulesCol">
+								<Rules />
+							</div>
 						</Col>
-						<Col className="PinglistCol">
-							<PinglistGen />
+						<Col>
+							<div className="PinglistCol">
+								<PinglistGen />
+							</div>
 						</Col>
 					</Row>
 				</Container>
@@ -78,21 +114,25 @@ class App extends React.Component {
 				<Container fluid className="FooterRow">
 					<Row>
 						<Col>
-							General Accents & Skins Pinglists © 2014-{new Date().getFullYear()}. Coding by <strong>Duosora</strong>.
+							<span dangerouslySetInnerHTML={{ __html: globalState.dynamicFields[32][0]}}></span> Coding by <strong>Duosora</strong>.
 						</Col>
 					</Row>
 
 					<Row>
 						<Col>
-							This wonderful app is made possible by <strong>React</strong> by Facebook and <strong>react-query</strong> by Tanner Linsley.
+							<span dangerouslySetInnerHTML={{ __html: globalState.dynamicFields[33][0]}}></span>
 						</Col>
 					</Row>
 				</Container>
+
+				<button id="scrollToTopButton" className="backToTopButton" onClick={this.goBackTop}>
+					<FontAwesomeIcon icon={faAngleUp} size="2x" />
+				</button>
       </div>
     ) : (
 		<span>
 			<SheetData />
-			Loading . . .
+			Loading 。 。 。
 		</span>
 	);
 
@@ -100,12 +140,3 @@ class App extends React.Component {
 }
 
 export default App;
-
-/*
-				<h3>Pings</h3>
-				<PinglistForm
-					breedlist={this.state.breedList}
-					keywords={this.state.keywordList}
-					translation={this.state.rulesList[this.state.currentTranslation]}
-				/>
-				*/

@@ -1,0 +1,719 @@
+@import "theme1";
+
+@function map-deep-get($map, $keys...) {
+  @each $key in $keys {
+    $map: map-get($map, $key);
+  }
+  @return $map;
+}
+
+html {
+	min-height: 100vh;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+	min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Oswald', sans-serif;
+	text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+a:link, a:visited, a:active {
+  color: #2a223a;
+}
+
+a:hover {
+  color: #403954;
+}
+
+.keywordContainer Button {
+	margin: 10px;
+}
+
+.keywordContainer {
+	max-height: 320px;
+	min-height: 320px;
+	overflow-y: scroll;
+}
+
+.HeaderRow, .PinglistCol {
+  text-align: center;
+}
+
+.rulePosition {
+	display: block;
+	min-height: 14px;
+}
+
+.rulePosition li {
+	margin-bottom: 7px;
+}
+
+.RulesCol h1:first-child {
+	margin:0;
+	padding:0;
+}
+
+.HeaderRow {
+	margin-bottom: 5px;
+}
+
+.HeaderContent {
+	padding: 15px 0;
+}
+
+.App {
+	background-color: map-deep-get($app_general, "background");
+	color: map-deep-get($app_general, "text");
+}
+
+.HeaderContent {
+  background-color: map-deep-get($header, "background");
+	color: map-deep-get($header, "text");
+
+  a {
+    &:link {
+      color: map-deep-get($header, "link", "usual");
+    }
+
+    &:visited {
+      color: map-deep-get($header, "link", "visited");
+    }
+
+    &:active {
+      color: map-deep-get($header, "link", "pressed");
+    }
+
+    &:hover {
+      color: map-deep-get($header, "link", "hover");
+    }
+  }
+}
+
+.RulesCol, .PinglistCol {
+  $bottom_color: map-deep-get($app_columns, "background", "gradient-bottom");
+  $top_color: map-deep-get($app_columns, "background", "gradient-top");
+
+  background-color: $top_color;
+	color: map-deep-get($app_columns, "text");
+  background-image: linear-gradient(to top, $bottom_color 0%, $top_color 100%);
+  background-image: -o-linear-gradient(to top, $bottom_color 0%, $top_color 100%);
+  background-image: -moz-linear-gradient(to top, $bottom_color 0%, $top_color 100%);
+  background-image: -webkit-linear-gradient(to top, $bottom_color 0%, $top_color 100%);
+  background-image: -ms-linear-gradient(to top, $bottom_color 0%, $top_color 100%);
+  background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, $bottom_color),color-stop(1, $top_color));
+}
+
+.keywordContainer {
+	background-color: map-deep-get($search_keywords, "container", "background");
+	color: map-deep-get($search_keywords, "container", "text");
+
+  .keywordButton {
+    text-align: center;
+  	width: 95%;
+    border-radius: 5px;
+  	border: 1px solid map-deep-get($search_keywords, "button", "border");
+    background-color: map-deep-get($search_keywords, "button", "ordinary", "background");
+  	color: map-deep-get($search_keywords, "button", "ordinary", "text");
+
+    &:disabled {
+      background-color: map-deep-get($search_keywords, "button", "disabled", "background");
+    	color: map-deep-get($search_keywords, "button", "disabled", "text");
+    }
+
+    &:hover {
+      background-color: map-deep-get($search_keywords, "button", "hover", "background") !important;
+    	color: map-deep-get($search_keywords, "button", "hover", "text");
+    }
+
+    &:active {
+      background-color: map-deep-get($search_keywords, "button", "selected", "background") !important;
+    	color: map-deep-get($search_keywords, "button", "selected", "text");
+      border: 1px solid map-deep-get($search_keywords, "button", "border") !important;
+    }
+
+    &:focus {
+      box-shadow: none !important;
+      outline: none !important;
+    }
+  }
+
+  .btn-outline-info:not(:disabled):not(.disabled).active {
+  	background-color: map-deep-get($search_keywords, "button", "selected", "background") !important;
+    color: map-deep-get($search_keywords, "button", "selected", "text") !important;
+    border: 1px solid map-deep-get($search_keywords, "button", "border");
+  }
+}
+
+/* Big thanks to Sass for optimizing that for us. */
+
+.RulesCol a:link,
+.RulesCol a:visited,
+.NewPinglistButton {
+  font-size: 13px;
+}
+
+.GenerateButton,
+.CopyButton {
+  font-size: 15px;
+  width: 80%;
+}
+
+.RulesCol a:link,
+.RulesCol a:visited,
+.NewPinglistButton {
+  $bottom_color: map-deep-get($volumetric_button, "ordinary", "background", "gradient-bottom");
+  $top_color: map-deep-get($volumetric_button, "ordinary", "background", "gradient-top");
+  border: 1px solid map-deep-get($volumetric_button, "ordinary", "border") !important;
+  background-color: $top_color;
+  color: map-deep-get($volumetric_button, "ordinary", "text");
+  text-shadow: map-deep-get($volumetric_button, "outline") 2px 0px 0px, map-deep-get($volumetric_button, "outline") 1.75517px 0.958851px 0px, map-deep-get($volumetric_button, "outline") 1.0806px 1.68294px 0px, map-deep-get($volumetric_button, "outline") 0.141474px 1.99499px 0px, map-deep-get($volumetric_button, "outline") -0.832294px 1.81859px 0px, map-deep-get($volumetric_button, "outline") -1.60229px 1.19694px 0px, map-deep-get($volumetric_button, "outline") -1.97998px 0.28224px 0px, map-deep-get($volumetric_button, "outline") -1.87291px -0.701566px 0px, map-deep-get($volumetric_button, "outline") -1.30729px -1.5136px 0px, map-deep-get($volumetric_button, "outline") -0.421592px -1.95506px 0px, map-deep-get($volumetric_button, "outline") 0.567324px -1.91785px 0px, map-deep-get($volumetric_button, "outline") 1.41734px -1.41108px 0px, map-deep-get($volumetric_button, "outline") 1.92034px -0.558831px 0px, -3px 2px 2px map-deep-get($volumetric_button, "shadow") !important;
+  background-image: linear-gradient(to top, $bottom_color 0%, $top_color 100%);
+  background-image: -o-linear-gradient(to top, $bottom_color 0%, $top_color 100%);
+  background-image: -moz-linear-gradient(to top, $bottom_color 0%, $top_color 100%);
+  background-image: -webkit-linear-gradient(to top, $bottom_color 0%, $top_color 100%);
+  background-image: -ms-linear-gradient(to top, $bottom_color 0%, $top_color 100%);
+  background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, $bottom_color),color-stop(1, $top_color));
+  -webkit-box-shadow: 0px 6px 0px map-deep-get($volumetric_button, "ordinary", "box-shadow"), 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+	-moz-box-shadow: 0px 6px 0px map-deep-get($volumetric_button, "ordinary", "box-shadow"), 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+	box-shadow: 0px 6px 0px map-deep-get($volumetric_button, "ordinary", "box-shadow"), 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+
+  &:disabled {
+    background-color: map-deep-get($volumetric_button, "disabled", "background", "gradient-top") !important;
+  	border: 1px solid map-deep-get($volumetric_button, "disabled", "border") !important;
+  	color: map-deep-get($volumetric_button, "disabled", "text");
+  	user-select: none;
+  	background-image: linear-gradient(315deg, map-deep-get($volumetric_button, "disabled", "background", "gradient-bottom") 0%, map-deep-get($volumetric_button, "disabled", "background", "gradient-top") 74%);
+  	text-shadow: 0px  -1px 0px rgba(270,270,270,.5) !important;
+  	-webkit-box-shadow: 0px 6px 0px map-deep-get($volumetric_button, "disabled", "box-shadow");
+  	-moz-box-shadow: 0px 6px 0px map-deep-get($volumetric_button, "disabled", "box-shadow");
+  	box-shadow: 0px 6px 0px map-deep-get($volumetric_button, "disabled", "box-shadow");
+  }
+
+  &:hover:enabled {
+    $bottom_color: map-deep-get($volumetric_button, "hover", "background", "gradient-bottom");
+    $top_color: map-deep-get($volumetric_button, "hover", "background", "gradient-top");
+
+    border: 1px solid map-deep-get($volumetric_button, "hover", "border") !important;
+
+    background-color: $top_color;
+    color: map-deep-get($volumetric_button, "hover", "text");
+    text-shadow: map-deep-get($volumetric_button, "outline") 2px 0px 0px, map-deep-get($volumetric_button, "outline") 1.75517px 0.958851px 0px, map-deep-get($volumetric_button, "outline") 1.0806px 1.68294px 0px, map-deep-get($volumetric_button, "outline") 0.141474px 1.99499px 0px, map-deep-get($volumetric_button, "outline") -0.832294px 1.81859px 0px, map-deep-get($volumetric_button, "outline") -1.60229px 1.19694px 0px, map-deep-get($volumetric_button, "outline") -1.97998px 0.28224px 0px, map-deep-get($volumetric_button, "outline") -1.87291px -0.701566px 0px, map-deep-get($volumetric_button, "outline") -1.30729px -1.5136px 0px, map-deep-get($volumetric_button, "outline") -0.421592px -1.95506px 0px, map-deep-get($volumetric_button, "outline") 0.567324px -1.91785px 0px, map-deep-get($volumetric_button, "outline") 1.41734px -1.41108px 0px, map-deep-get($volumetric_button, "outline") 1.92034px -0.558831px 0px, -3px 2px 2px map-deep-get($volumetric_button, "shadow");
+    background-image: linear-gradient(to top, $bottom_color 0%, $top_color 100%);
+    background-image: -o-linear-gradient(to top, $bottom_color 0%, $top_color 100%);
+    background-image: -moz-linear-gradient(to top, $bottom_color 0%, $top_color 100%);
+    background-image: -webkit-linear-gradient(to top, $bottom_color 0%, $top_color 100%);
+    background-image: -ms-linear-gradient(to top, $bottom_color 0%, $top_color 100%);
+    background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, $bottom_color),color-stop(1, $top_color));
+
+    -webkit-box-shadow: 0px 6px 0px map-deep-get($volumetric_button, "hover", "box-shadow"), 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+  	-moz-box-shadow: 0px 6px 0px map-deep-get($volumetric_button, "hover", "box-shadow"), 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+  	box-shadow: 0px 6px 0px map-deep-get($volumetric_button, "hover", "box-shadow"), 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+  }
+
+  &:active:enabled {
+    $bottom_color: map-deep-get($volumetric_button, "pressed", "background", "gradient-bottom");
+    $top_color: map-deep-get($volumetric_button, "pressed", "background", "gradient-top");
+
+    background-color: $top_color;
+    color:  map-deep-get($volumetric_button, "pressed", "text") !important;
+    text-shadow: map-deep-get($volumetric_button, "outline") 2px 0px 0px, map-deep-get($volumetric_button, "outline") 1.75517px 0.958851px 0px, map-deep-get($volumetric_button, "outline") 1.0806px 1.68294px 0px, map-deep-get($volumetric_button, "outline") 0.141474px 1.99499px 0px, map-deep-get($volumetric_button, "outline") -0.832294px 1.81859px 0px, map-deep-get($volumetric_button, "outline") -1.60229px 1.19694px 0px, map-deep-get($volumetric_button, "outline") -1.97998px 0.28224px 0px, map-deep-get($volumetric_button, "outline") -1.87291px -0.701566px 0px, map-deep-get($volumetric_button, "outline") -1.30729px -1.5136px 0px, map-deep-get($volumetric_button, "outline") -0.421592px -1.95506px 0px, map-deep-get($volumetric_button, "outline") 0.567324px -1.91785px 0px, map-deep-get($volumetric_button, "outline") 1.41734px -1.41108px 0px, map-deep-get($volumetric_button, "outline") 1.92034px -0.558831px 0px, -3px 2px 2px map-deep-get($volumetric_button, "shadow");
+    background-image: linear-gradient(to top, $bottom_color 0%, $top_color 100%);
+    background-image: -o-linear-gradient(to top, $bottom_color 0%, $top_color 100%);
+    background-image: -moz-linear-gradient(to top, $bottom_color 0%, $top_color 100%);
+    background-image: -webkit-linear-gradient(to top, $bottom_color 0%, $top_color 100%);
+    background-image: -ms-linear-gradient(to top, $bottom_color 0%, $top_color 100%);
+    background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, $bottom_color),color-stop(1, $top_color));
+    -webkit-box-shadow: 0px 2px 0px map-deep-get($volumetric_button, "pressed", "box-shadow"), 0px 1px 6px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5) !important;
+    -moz-box-shadow: 0px 2px 0px map-deep-get($volumetric_button, "pressed", "box-shadow"), 0px 1px 6px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5) !important;
+    box-shadow: 0px 2px 0px map-deep-get($volumetric_button, "pressed", "box-shadow"), 0px 1px 6px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5) !important;
+  }
+
+  &:focus:enabled {
+    color:  map-deep-get($generate_button, "pressed", "text") !important;
+  }
+}
+
+.GenerateButton {
+  $bottom_color: map-deep-get($generate_button, "ordinary", "background", "gradient-bottom");
+  $top_color: map-deep-get($generate_button, "ordinary", "background", "gradient-top");
+  border: 1px solid map-deep-get($generate_button, "ordinary", "border") !important;
+  background-color: $top_color;
+  color: map-deep-get($generate_button, "ordinary", "text");
+  text-shadow: map-deep-get($generate_button, "outline") 2px 0px 0px, map-deep-get($generate_button, "outline") 1.75517px 0.958851px 0px, map-deep-get($generate_button, "outline") 1.0806px 1.68294px 0px, map-deep-get($generate_button, "outline") 0.141474px 1.99499px 0px, map-deep-get($generate_button, "outline") -0.832294px 1.81859px 0px, map-deep-get($generate_button, "outline") -1.60229px 1.19694px 0px, map-deep-get($generate_button, "outline") -1.97998px 0.28224px 0px, map-deep-get($generate_button, "outline") -1.87291px -0.701566px 0px, map-deep-get($generate_button, "outline") -1.30729px -1.5136px 0px, map-deep-get($generate_button, "outline") -0.421592px -1.95506px 0px, map-deep-get($generate_button, "outline") 0.567324px -1.91785px 0px, map-deep-get($generate_button, "outline") 1.41734px -1.41108px 0px, map-deep-get($generate_button, "outline") 1.92034px -0.558831px 0px, -3px 2px 2px map-deep-get($generate_button, "shadow") !important;
+  background-image: linear-gradient(to top, $bottom_color 0%, $top_color 100%);
+  background-image: -o-linear-gradient(to top, $bottom_color 0%, $top_color 100%);
+  background-image: -moz-linear-gradient(to top, $bottom_color 0%, $top_color 100%);
+  background-image: -webkit-linear-gradient(to top, $bottom_color 0%, $top_color 100%);
+  background-image: -ms-linear-gradient(to top, $bottom_color 0%, $top_color 100%);
+  background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, $bottom_color),color-stop(1, $top_color));
+  -webkit-box-shadow: 0px 6px 0px map-deep-get($generate_button, "ordinary", "box-shadow"), 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+	-moz-box-shadow: 0px 6px 0px map-deep-get($generate_button, "ordinary", "box-shadow"), 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+	box-shadow: 0px 6px 0px map-deep-get($generate_button, "ordinary", "box-shadow"), 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+
+  &:disabled {
+    background-color: map-deep-get($generate_button, "disabled", "background", "gradient-top") !important;
+  	border: 1px solid map-deep-get($generate_button, "disabled", "border") !important;
+  	color: map-deep-get($generate_button, "disabled", "text");
+  	user-select: none;
+  	background-image: linear-gradient(315deg, map-deep-get($generate_button, "disabled", "background", "gradient-bottom") 0%, map-deep-get($generate_button, "disabled", "background", "gradient-top") 74%);
+  	text-shadow: 0px  -1px 0px rgba(270,270,270,.5) !important;
+  	-webkit-box-shadow: 0px 6px 0px map-deep-get($generate_button, "disabled", "box-shadow");
+  	-moz-box-shadow: 0px 6px 0px map-deep-get($generate_button, "disabled", "box-shadow");
+  	box-shadow: 0px 6px 0px map-deep-get($generate_button, "disabled", "box-shadow");
+  }
+
+  &:hover:enabled {
+    $bottom_color: map-deep-get($generate_button, "hover", "background", "gradient-bottom");
+    $top_color: map-deep-get($generate_button, "hover", "background", "gradient-top");
+
+    border: 1px solid map-deep-get($generate_button, "hover", "border") !important;
+
+    background-color: $top_color;
+    color: map-deep-get($generate_button, "hover", "text");
+    text-shadow: map-deep-get($generate_button, "outline") 2px 0px 0px, map-deep-get($generate_button, "outline") 1.75517px 0.958851px 0px, map-deep-get($generate_button, "outline") 1.0806px 1.68294px 0px, map-deep-get($generate_button, "outline") 0.141474px 1.99499px 0px, map-deep-get($generate_button, "outline") -0.832294px 1.81859px 0px, map-deep-get($generate_button, "outline") -1.60229px 1.19694px 0px, map-deep-get($generate_button, "outline") -1.97998px 0.28224px 0px, map-deep-get($generate_button, "outline") -1.87291px -0.701566px 0px, map-deep-get($generate_button, "outline") -1.30729px -1.5136px 0px, map-deep-get($generate_button, "outline") -0.421592px -1.95506px 0px, map-deep-get($generate_button, "outline") 0.567324px -1.91785px 0px, map-deep-get($generate_button, "outline") 1.41734px -1.41108px 0px, map-deep-get($generate_button, "outline") 1.92034px -0.558831px 0px, -3px 2px 2px map-deep-get($generate_button, "shadow");
+    background-image: linear-gradient(to top, $bottom_color 0%, $top_color 100%);
+    background-image: -o-linear-gradient(to top, $bottom_color 0%, $top_color 100%);
+    background-image: -moz-linear-gradient(to top, $bottom_color 0%, $top_color 100%);
+    background-image: -webkit-linear-gradient(to top, $bottom_color 0%, $top_color 100%);
+    background-image: -ms-linear-gradient(to top, $bottom_color 0%, $top_color 100%);
+    background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, $bottom_color),color-stop(1, $top_color));
+
+    -webkit-box-shadow: 0px 6px 0px map-deep-get($generate_button, "hover", "box-shadow"), 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+  	-moz-box-shadow: 0px 6px 0px map-deep-get($generate_button, "hover", "box-shadow"), 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+  	box-shadow: 0px 6px 0px map-deep-get($generate_button, "hover", "box-shadow"), 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+  }
+
+  &:active:enabled {
+    $bottom_color: map-deep-get($generate_button, "pressed", "background", "gradient-bottom");
+    $top_color: map-deep-get($generate_button, "pressed", "background", "gradient-top");
+
+    background-color: $top_color;
+    color:  map-deep-get($generate_button, "pressed", "text") !important;
+    text-shadow: map-deep-get($generate_button, "outline") 2px 0px 0px, map-deep-get($generate_button, "outline") 1.75517px 0.958851px 0px, map-deep-get($generate_button, "outline") 1.0806px 1.68294px 0px, map-deep-get($generate_button, "outline") 0.141474px 1.99499px 0px, map-deep-get($generate_button, "outline") -0.832294px 1.81859px 0px, map-deep-get($generate_button, "outline") -1.60229px 1.19694px 0px, map-deep-get($generate_button, "outline") -1.97998px 0.28224px 0px, map-deep-get($generate_button, "outline") -1.87291px -0.701566px 0px, map-deep-get($generate_button, "outline") -1.30729px -1.5136px 0px, map-deep-get($generate_button, "outline") -0.421592px -1.95506px 0px, map-deep-get($generate_button, "outline") 0.567324px -1.91785px 0px, map-deep-get($generate_button, "outline") 1.41734px -1.41108px 0px, map-deep-get($generate_button, "outline") 1.92034px -0.558831px 0px, -3px 2px 2px map-deep-get($generate_button, "shadow");
+    background-image: linear-gradient(to top, $bottom_color 0%, $top_color 100%);
+    background-image: -o-linear-gradient(to top, $bottom_color 0%, $top_color 100%);
+    background-image: -moz-linear-gradient(to top, $bottom_color 0%, $top_color 100%);
+    background-image: -webkit-linear-gradient(to top, $bottom_color 0%, $top_color 100%);
+    background-image: -ms-linear-gradient(to top, $bottom_color 0%, $top_color 100%);
+    background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, $bottom_color),color-stop(1, $top_color));
+    -webkit-box-shadow: 0px 2px 0px map-deep-get($generate_button, "pressed", "box-shadow"), 0px 1px 6px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+    -moz-box-shadow: 0px 2px 0px map-deep-get($generate_button, "pressed", "box-shadow"), 0px 1px 6px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+    box-shadow: 0px 2px 0px map-deep-get($generate_button, "pressed", "box-shadow"), 0px 1px 6px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+  }
+
+  &:focus:enabled {
+    color:  map-deep-get($generate_button, "pressed", "text");
+  }
+}
+
+.CopyButton {
+  $bottom_color: map-deep-get($copy_button, "ordinary", "background", "gradient-bottom");
+  $top_color: map-deep-get($copy_button, "ordinary", "background", "gradient-top");
+  border: 1px solid map-deep-get($copy_button, "ordinary", "border") !important;
+  background-color: $top_color;
+  color: map-deep-get($copy_button, "ordinary", "text");
+  text-shadow: map-deep-get($copy_button, "outline") 2px 0px 0px, map-deep-get($copy_button, "outline") 1.75517px 0.958851px 0px, map-deep-get($copy_button, "outline") 1.0806px 1.68294px 0px, map-deep-get($copy_button, "outline") 0.141474px 1.99499px 0px, map-deep-get($copy_button, "outline") -0.832294px 1.81859px 0px, map-deep-get($copy_button, "outline") -1.60229px 1.19694px 0px, map-deep-get($copy_button, "outline") -1.97998px 0.28224px 0px, map-deep-get($copy_button, "outline") -1.87291px -0.701566px 0px, map-deep-get($copy_button, "outline") -1.30729px -1.5136px 0px, map-deep-get($copy_button, "outline") -0.421592px -1.95506px 0px, map-deep-get($copy_button, "outline") 0.567324px -1.91785px 0px, map-deep-get($copy_button, "outline") 1.41734px -1.41108px 0px, map-deep-get($copy_button, "outline") 1.92034px -0.558831px 0px, -3px 2px 2px map-deep-get($copy_button, "shadow")  !important;
+  background-image: linear-gradient(to top, $bottom_color 0%, $top_color 100%);
+  background-image: -o-linear-gradient(to top, $bottom_color 0%, $top_color 100%);
+  background-image: -moz-linear-gradient(to top, $bottom_color 0%, $top_color 100%);
+  background-image: -webkit-linear-gradient(to top, $bottom_color 0%, $top_color 100%);
+  background-image: -ms-linear-gradient(to top, $bottom_color 0%, $top_color 100%);
+  background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, $bottom_color),color-stop(1, $top_color));
+  -webkit-box-shadow: 0px 6px 0px map-deep-get($copy_button, "ordinary", "box-shadow"), 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+	-moz-box-shadow: 0px 6px 0px map-deep-get($copy_button, "ordinary", "box-shadow"), 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+	box-shadow: 0px 6px 0px map-deep-get($copy_button, "ordinary", "box-shadow"), 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+
+  &:hover:enabled {
+    $bottom_color: map-deep-get($copy_button, "hover", "background", "gradient-bottom");
+    $top_color: map-deep-get($copy_button, "hover", "background", "gradient-top");
+
+    background-color: $top_color;
+    color:  map-deep-get($copy_button, "hover", "text");
+    text-shadow: map-deep-get($copy_button, "outline") 2px 0px 0px, map-deep-get($copy_button, "outline") 1.75517px 0.958851px 0px, map-deep-get($copy_button, "outline") 1.0806px 1.68294px 0px, map-deep-get($copy_button, "outline") 0.141474px 1.99499px 0px, map-deep-get($copy_button, "outline") -0.832294px 1.81859px 0px, map-deep-get($copy_button, "outline") -1.60229px 1.19694px 0px, map-deep-get($copy_button, "outline") -1.97998px 0.28224px 0px, map-deep-get($copy_button, "outline") -1.87291px -0.701566px 0px, map-deep-get($copy_button, "outline") -1.30729px -1.5136px 0px, map-deep-get($copy_button, "outline") -0.421592px -1.95506px 0px, map-deep-get($copy_button, "outline") 0.567324px -1.91785px 0px, map-deep-get($copy_button, "outline") 1.41734px -1.41108px 0px, map-deep-get($copy_button, "outline") 1.92034px -0.558831px 0px, -3px 2px 2px map-deep-get($copy_button, "shadow");
+    background-image: linear-gradient(to top, $bottom_color 0%, $top_color 100%);
+    background-image: -o-linear-gradient(to top, $bottom_color 0%, $top_color 100%);
+    background-image: -moz-linear-gradient(to top, $bottom_color 0%, $top_color 100%);
+    background-image: -webkit-linear-gradient(to top, $bottom_color 0%, $top_color 100%);
+    background-image: -ms-linear-gradient(to top, $bottom_color 0%, $top_color 100%);
+    background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, $bottom_color),color-stop(1, $top_color));
+    border: 1px solid map-deep-get($copy_button, "hover", "border") !important;
+
+    -webkit-box-shadow: 0px 6px 0px map-deep-get($copy_button, "hover", "box-shadow"), 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+  	-moz-box-shadow: 0px 6px 0px map-deep-get($copy_button, "hover", "box-shadow"), 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+  	box-shadow: 0px 6px 0px map-deep-get($copy_button, "hover", "box-shadow"), 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+  }
+
+  &:active:enabled {
+    $bottom_color: map-deep-get($copy_button, "pressed", "background", "gradient-bottom");
+    $top_color: map-deep-get($copy_button, "pressed", "background", "gradient-top");
+
+    background-color: $top_color;
+    color:  map-deep-get($copy_button, "pressed", "text") !important;
+    text-shadow: map-deep-get($copy_button, "outline") 2px 0px 0px, map-deep-get($copy_button, "outline") 1.75517px 0.958851px 0px, map-deep-get($copy_button, "outline") 1.0806px 1.68294px 0px, map-deep-get($copy_button, "outline") 0.141474px 1.99499px 0px, map-deep-get($copy_button, "outline") -0.832294px 1.81859px 0px, map-deep-get($copy_button, "outline") -1.60229px 1.19694px 0px, map-deep-get($copy_button, "outline") -1.97998px 0.28224px 0px, map-deep-get($copy_button, "outline") -1.87291px -0.701566px 0px, map-deep-get($copy_button, "outline") -1.30729px -1.5136px 0px, map-deep-get($copy_button, "outline") -0.421592px -1.95506px 0px, map-deep-get($copy_button, "outline") 0.567324px -1.91785px 0px, map-deep-get($copy_button, "outline") 1.41734px -1.41108px 0px, map-deep-get($copy_button, "outline") 1.92034px -0.558831px 0px, -3px 2px 2px map-deep-get($copy_button, "shadow");
+    background-image: linear-gradient(to top, $bottom_color 0%, $top_color 100%);
+    background-image: -o-linear-gradient(to top, $bottom_color 0%, $top_color 100%);
+    background-image: -moz-linear-gradient(to top, $bottom_color 0%, $top_color 100%);
+    background-image: -webkit-linear-gradient(to top, $bottom_color 0%, $top_color 100%);
+    background-image: -ms-linear-gradient(to top, $bottom_color 0%, $top_color 100%);
+    background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, $bottom_color),color-stop(1, $top_color));
+    -webkit-box-shadow: 0px 2px 0px map-deep-get($copy_button, "pressed", "box-shadow"), 0px 1px 6px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+    -moz-box-shadow: 0px 2px 0px map-deep-get($copy_button, "pressed", "box-shadow"), 0px 1px 6px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+    box-shadow: 0px 2px 0px map-deep-get($copy_button, "pressed", "box-shadow"), 0px 1px 6px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+  }
+
+  &:focus:enabled {
+    color:  map-deep-get($generate_button, "pressed", "text");
+  }
+}
+
+.RulesCol a:link,
+.RulesCol a:visited,
+.NewPinglistButton,
+.GenerateButton,
+.CopyButton {
+  text-decoration: none;
+  font-weight: bold;
+	font-family: Roboto, sans-serif;
+	display: inline-block;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	padding: 10px 10px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	font-weight: bolder !important;
+	text-shadow: 1px  1px 1px rgba(0,0,0,.5);
+  -webkit-transition: all .1s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+
+  &:focus:enabled {
+    outline: none !important;
+  	box-shadow: none !important;
+  	-webkit-transform: translate(0, 4px);
+  	-moz-transform: translate(0, 4px);
+  	transform: translate(0, 4px);
+  	-webkit-transition: all .1s ease-in-out;
+  	-moz-transition: all .2s ease-in-out;
+  	transition: all .2s ease-in-out;
+  }
+}
+
+.RulesCol a:hover {
+  $bottom_color: map-deep-get($volumetric_button, "hover", "background", "gradient-bottom");
+  $top_color: map-deep-get($volumetric_button, "hover", "background", "gradient-top");
+
+  background-color: $top_color;
+  background-image: linear-gradient(to top, $bottom_color 0%, $top_color 100%);
+  background-image: -o-linear-gradient(to top, $bottom_color 0%, $top_color 100%);
+  background-image: -moz-linear-gradient(to top, $bottom_color 0%, $top_color 100%);
+  background-image: -webkit-linear-gradient(to top, $bottom_color 0%, $top_color 100%);
+  background-image: -ms-linear-gradient(to top, $bottom_color 0%, $top_color 100%);
+  background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, $bottom_color),color-stop(1, $top_color));
+}
+
+.RulesCol a:active {
+  $bottom_color: map-deep-get($volumetric_button, "pressed", "background", "gradient-bottom");
+  $top_color: map-deep-get($volumetric_button, "pressed", "background", "gradient-top");
+
+  background-color: $top_color;
+  background-image: linear-gradient(to top, $bottom_color 0%, $top_color 100%);
+  background-image: -o-linear-gradient(to top, $bottom_color 0%, $top_color 100%);
+  background-image: -moz-linear-gradient(to top, $bottom_color 0%, $top_color 100%);
+  background-image: -webkit-linear-gradient(to top, $bottom_color 0%, $top_color 100%);
+  background-image: -ms-linear-gradient(to top, $bottom_color 0%, $top_color 100%);
+  background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, $bottom_color),color-stop(1, $top_color));
+  box-shadow: none;
+
+  -webkit-transform: translate(0, 4px);
+  -moz-transform: translate(0, 4px);
+  transform: translate(0, 4px);
+  -webkit-transition: all .1s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.RulesCol a:link, .RulesCol a:visited {
+	margin: 10px;
+}
+
+.NewPinglistButton {
+	margin: 10px 0 10px 0;
+}
+
+.ReadyPinglistServeContainer {
+	background-color: map-deep-get($pinglist_textarea, "background") !important;
+	color: map-deep-get($pinglist_textarea, "text");
+	font-size: 7pt;
+	min-height: 200px;
+	max-height: 200px;
+	overflow-y: scroll;
+	resize: none;
+	margin: 25px 0;
+}
+
+.RulesCol {
+	padding: 0 15px;
+}
+
+.PinglistCol {
+	padding: 15px 25px 25px 25px;
+}
+
+.PinglistCol h1 {
+	margin-bottom: 15px;
+}
+
+.RulesCol, .PinglistCol {
+	border-radius: 9px;
+	margin: 15px 0;
+}
+
+.RulesCol h1, .PinglistCol h1 {
+  color: map-deep-get($app_headings, "text");
+  text-shadow: map-deep-get($app_headings, "outline") 2px 0px 0px, map-deep-get($app_headings, "outline") 1.75517px 0.958851px 0px, map-deep-get($app_headings, "outline") 1.0806px 1.68294px 0px, map-deep-get($app_headings, "outline") 0.141474px 1.99499px 0px, map-deep-get($app_headings, "outline") -0.832294px 1.81859px 0px, map-deep-get($app_headings, "outline") -1.60229px 1.19694px 0px, map-deep-get($app_headings, "outline") -1.97998px 0.28224px 0px, map-deep-get($app_headings, "outline") -1.87291px -0.701566px 0px, map-deep-get($app_headings, "outline") -1.30729px -1.5136px 0px, map-deep-get($app_headings, "outline") -0.421592px -1.95506px 0px, map-deep-get($app_headings, "outline") 0.567324px -1.91785px 0px, map-deep-get($app_headings, "outline") 1.41734px -1.41108px 0px, map-deep-get($app_headings, "outline") 1.92034px -0.558831px 0px, -3px 2px 2px map-deep-get($app_headings, "shadow");
+}
+
+.PinglistCol h4 {
+  padding-bottom: 0;
+  margin-bottom: 5px !important;
+  font-size: 2rem;
+  color: map-deep-get($app_headings, "text");
+  text-shadow: map-deep-get($app_headings, "outline") 2px 0px 0px, map-deep-get($app_headings, "outline") 1.75517px 0.958851px 0px, map-deep-get($app_headings, "outline") 1.0806px 1.68294px 0px, map-deep-get($app_headings, "outline") 0.141474px 1.99499px 0px, map-deep-get($app_headings, "outline") -0.832294px 1.81859px 0px, map-deep-get($app_headings, "outline") -1.60229px 1.19694px 0px, map-deep-get($app_headings, "outline") -1.97998px 0.28224px 0px, map-deep-get($app_headings, "outline") -1.87291px -0.701566px 0px, map-deep-get($app_headings, "outline") -1.30729px -1.5136px 0px, map-deep-get($app_headings, "outline") -0.421592px -1.95506px 0px, map-deep-get($app_headings, "outline") 0.567324px -1.91785px 0px, map-deep-get($app_headings, "outline") 1.41734px -1.41108px 0px, map-deep-get($app_headings, "outline") 1.92034px -0.558831px 0px;
+}
+
+.RulesCol ul {
+	padding: 15px 25px 25px 25px;
+}
+
+.pinglistBtnsRow {
+	margin: 20px 0;
+}
+
+.container h4 {
+	margin: 15px 0;
+}
+
+.FooterRow {
+	text-align: center;
+  padding-bottom: 15px;
+}
+
+.pinglistFilterContainer {
+	margin-bottom: 15px;
+}
+
+.pinglistFilterHeader .col, .pinglistFilterHeader .col-1, .pinglistFilterHeader .col-10, .pinglistFilterHeader .col-11, .pinglistFilterHeader .col-12, .pinglistFilterHeader .col-2, .pinglistFilterHeader .col-3, .pinglistFilterHeader .col-4, .pinglistFilterHeader .col-5, .pinglistFilterHeader .col-6, .pinglistFilterHeader .col-7, .pinglistFilterHeader .col-8, .pinglistFilterHeader .col-9,
+.pinglistFilterHeader .col-auto, .pinglistFilterHeader .col-lg, .pinglistFilterHeader .col-lg-1, .pinglistFilterHeader .col-lg-10, .pinglistFilterHeader .col-lg-11, .pinglistFilterHeader .col-lg-12, .pinglistFilterHeader .col-lg-2, .pinglistFilterHeader .col-lg-3, .pinglistFilterHeader .col-lg-4, .pinglistFilterHeader .col-lg-5,
+.pinglistFilterHeader .col-lg-6, .pinglistFilterHeader .col-lg-7, .pinglistFilterHeader .col-lg-8, .pinglistFilterHeader .col-lg-9, .pinglistFilterHeader .col-lg-auto, .pinglistFilterHeader .col-md, .pinglistFilterHeader .col-md-1, .pinglistFilterHeader .col-md-10, .pinglistFilterHeader .col-md-11, .pinglistFilterHeader .col-md-12,
+.pinglistFilterHeader .col-md-2, .pinglistFilterHeader .col-md-3, .pinglistFilterHeader .col-md-4, .pinglistFilterHeader .col-md-5, .pinglistFilterHeader .col-md-6, .pinglistFilterHeader .col-md-7, .pinglistFilterHeader .col-md-8, .pinglistFilterHeader .col-md-9, .pinglistFilterHeader .col-md-auto, .pinglistFilterHeader .col-sm,
+.pinglistFilterHeader .col-sm-1, .pinglistFilterHeader .col-sm-10, .pinglistFilterHeader .col-sm-11, .pinglistFilterHeader .col-sm-12, .pinglistFilterHeader .col-sm-2, .pinglistFilterHeader .col-sm-3, .pinglistFilterHeader .col-sm-4, .pinglistFilterHeader .col-sm-5, .pinglistFilterHeader .col-sm-6, .pinglistFilterHeader .col-sm-7,
+.pinglistFilterHeader .col-sm-8, .pinglistFilterHeader .col-sm-9, .pinglistFilterHeader .col-sm-auto, .pinglistFilterHeader .col-xl, .pinglistFilterHeader .col-xl-1, .pinglistFilterHeader .col-xl-10, .pinglistFilterHeader .col-xl-11, .pinglistFilterHeader .col-xl-12, .pinglistFilterHeader .col-xl-2, .pinglistFilterHeader .col-xl-3,
+.pinglistFilterHeader .col-xl-4, .pinglistFilterHeader .col-xl-5, .pinglistFilterHeader .col-xl-6, .pinglistFilterHeader .col-xl-7, .pinglistFilterHeader .col-xl-8, .pinglistFilterHeader .col-xl-9, .pinglistFilterHeader .col-xl-auto {
+  padding: 0 0 0 0px !important;
+}
+
+.pinglistFilterContainer .row .col {
+	padding: 5px 0 5px 0;
+}
+
+.pinglistFilterContainer .row .col button {
+	margin: 0;
+}
+
+.pinglistFilterContentBox.collapsed {
+	display: none;
+}
+
+.pinglistFilterHeader {
+	background-color: map-deep-get($search_filter, "header", "background");
+	color: map-deep-get($search_filter, "header", "text");
+	padding-left: 15px;
+  font-weight: bold;
+}
+
+.pinglistFilterHeader .col {
+	padding: 0 !important;
+}
+
+.pinglistFilterTitle {
+	text-align: left;
+}
+
+.pinglistFilterOptions {
+	text-align: right;
+}
+
+.pinglistSearchHeaderButton {
+
+}
+
+.pinglistFilterContentBox {
+	border-left: 1px solid map-deep-get($search_filter, "header", "background");
+	border-right: 1px solid map-deep-get($search_filter, "header", "background");
+	background-color: map-deep-get($search_filter, "content", "background");
+  color: map-deep-get($search_filter, "content", "text");
+  padding: 15px 0;
+}
+
+.pinglistFilterFooter {
+  background-color: map-deep-get($search_filter, "footer", "background");
+  color: map-deep-get($search_filter, "footer", "text");
+	font-size: 13px;
+	font-family: Roboto, sans-serif;
+	text-align: left;
+	padding: 20px 15px;
+}
+
+.backToTopButton {
+	border: 0;
+	position: fixed;
+	bottom: 30px;
+	right: 30px;
+	display: inline-block;
+	background-color: map-deep-get($back_to_top_button, "ordinary", "background");
+	width: 50px;
+	height: 50px;
+	text-align: center;
+	border-radius: 4px;
+	transition: background-color .3s,
+		opacity .5s, visibility .5s,
+    color .3s;
+	z-index: 1000;
+	opacity: 0;
+	visibility: hidden;
+	text-decoration: none;
+  color: map-deep-get($back_to_top_button, "ordinary", "text");
+
+  &:hover {
+    cursor: pointer;
+    background-color: map-deep-get($back_to_top_button, "hover", "background");
+  	text-decoration: none;
+    color: map-deep-get($back_to_top_button, "hover", "text");
+  }
+
+  &:active {
+    background-color: map-deep-get($back_to_top_button, "pressed", "background");
+    color: map-deep-get($back_to_top_button, "pressed", "text");
+  }
+
+  &:focus {
+    outline: none !important;
+  	box-shadow: none !important;
+  }
+}
+
+.backToTopButton.show {
+	opacity: 1;
+  visibility: visible;
+}
+
+.pinglistFilterContentBox > .col {
+  margin-top: 0px;
+}
+
+.PinglistSelectors {
+  .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4,
+  .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8,
+  .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12 {
+    padding-left: 4px !important;
+    padding-right: 4px !important;
+  }
+
+  .form-control {
+    margin-top: 3px;
+    margin-bottom: 3px;
+    padding: .375rem .35rem;
+  }
+}
+
+.form-control {
+  background-color: map-deep-get($search_filter, "content", "selectors", "background") !important;
+  color: map-deep-get($search_filter, "content", "selectors", "text") !important;
+}
+
+.pinglistSelectors .form-control:focus {
+  border: 0;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.form-control:focus {
+    border: 1px solid rgba(0,0,0,0);
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.pinglistFilterOptions {
+  button {
+    background-color: map-deep-get($search_filter, "header", "option_buttons", "ordinary", "background");
+    color: map-deep-get($search_filter, "header", "option_buttons", "ordinary", "text");
+    border: 1px solid rgba(0,0,0,0);
+    border-radius: 0;
+
+    &:hover {
+      background-color: map-deep-get($search_filter, "header", "option_buttons", "hover", "background");
+      color: map-deep-get($search_filter, "header", "option_buttons", "hover", "text");
+    }
+
+    &:active {
+      background-color: map-deep-get($search_filter, "header", "option_buttons", "pressed", "background");
+      color: map-deep-get($search_filter, "header", "option_buttons", "pressed", "text");
+    }
+
+    &:focus {
+      outline: none !important;
+    	box-shadow: none !important;
+    }
+  }
+}
+
+.pinglistFilterButton2 {
+  padding: 1px 8px;
+}
+
+.Footer {
+
+}
+
+#GenPinglistPopover {
+  display: inline-block;
+  position: absolute;
+  margin: -3px 0 0 -17px;
+}
+
+.PopoverResell {
+  border: 1px solid #ced4da;
+  margin-top: 3px !important;
+  margin-bottom: 3px !important;
+}
+
+.iconEligible {
+  color: #68d968;
+}
+
+.iconIneligible {
+  color: #ff0000;
+}
+
+.iconExpanded {
+  display: inline-block;
+  position: absolute;
+  margin: 1px 0 0 -4px;
+}

@@ -1,8 +1,9 @@
 import React from 'react';
 import { globalState } from './GlobalState';
-import { Container, Row, Col, Button, Form, Input } from 'reactstrap';
+import { Container, Row, Col, Form, Input, Button, InputGroup, InputGroupAddon, UncontrolledPopover, PopoverHeader, PopoverBody } from 'reactstrap';
 import KeywordForm from './KeywordForm';
-import { CopyToClipboard } from 'react-copy-to-clipboard';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
 
 class PinglistSettings extends React.Component {
 	constructor(props) {
@@ -10,16 +11,29 @@ class PinglistSettings extends React.Component {
 
 		this.state = {
 			selectedBreed		 : 0,
-			selectedType		 : 0,
+			selectedCoverage : 0,
 			selectedResell	 : 0,
 			selectedKeywords : [],
 			currentPinglist	 : '',
-			isResetting			 : false
+			isResetting			 : false,
+			popoverOpen			 : false
 		}
 	}
 
+	handleButton(e) {
+		e.preventDefault();
+	}
+
+	popoverToggle = () => {
+		const isNowOpen = this.state.popoverOpen;
+
+		this.setState({popoverOpen: !isNowOpen})
+	}
+
 	updateFilter = (filterKey,filterValue) => {
-		this.setState({[filterKey]: filterValue, currentPinglist: ''});
+		this.setState({[filterKey]: filterValue, currentPinglist: ''},() => {
+			this.props.onDataChange(this.props.eKey,JSON.parse(JSON.stringify(this.state)));
+		});
 	}
 
 	onChangeHandler = (event) => {
@@ -27,32 +41,6 @@ class PinglistSettings extends React.Component {
 		const filterValue = event.target.value;
 
 		this.updateFilter(filterName,filterValue);
-	}
-
-	inArray(whichArray,whichValue,deep=false) {
-		let finalResult = whichArray.includes(whichValue);
-
-		// If the value is found, there is no need for deep search.
-		if(!finalResult) {
-			if(deep) {
-				whichArray.forEach(e => {
-					if(Array.isArray(e)) {
-						if(!finalResult) {
-							finalResult = this.inArray(e,whichValue,true);
-						}
-					}
-				});
-			}
-		}
-
-		return finalResult;
-	}
-
-	isGenerationAllowed = () => {
-		return 		(!!this.state.selectedBreed)
-					 && (!!this.state.selectedType)
-					 && (!!this.state.selectedResell)
-					 && (this.state.selectedKeywords.length > 0);
 	}
 
 	updateKeywords = (selectedKeywords) => {
@@ -63,64 +51,6 @@ class PinglistSettings extends React.Component {
 		this.onChangeHandler			= this.onChangeHandler.bind(this);
 		this.updateFilter					= this.updateFilter.bind(this);
 		this.updateKeywords 			= this.updateKeywords.bind(this);
-		this.isGenerationAllowed	= this.isGenerationAllowed.bind(this);
-
-		this.checkPinglistUser  	= this.checkPinglistUser.bind(this);
-		this.generatePinglist			= this.generatePinglist.bind(this);
-		this.userWantsPings				= this.userWantsPings.bind(this);
-
-		this.inArray							= this.inArray.bind(this);
-	}
-
-	// On executing this, there is a guarantee the user WANTS pings of some kind.
-	checkPinglistUser = (userData) => {
-		const userBreeds					 = userData[1].split(', '),
-					userSkinAccent			 = userData[2].split(', '),
-					userKeywords				 = userData[3].split(', '),
-					userUnwantedKeywords = (userData.length > 4) ? userData[4].split(', ') : [],
-					wantedKeywords			 = this.state.selectedKeywords.filter(e => !userUnwantedKeywords.includes(e)),
-					matchedKeywords			 = Array.from(wantedKeywords).filter(e => userKeywords.includes(e));
-
-		// v1.001 starrlight's report: if any unwanted keyword got caught, filter out the user.
-		if(wantedKeywords.length !== this.state.selectedKeywords.length) {
-			return false;
-		}
-
-		// If wantedKeywords.length === 0, it means no keywords from filter request are wanted by user.
-		if(wantedKeywords.length === 0) {
-			return false;
-		}
-
-		if(this.state.selectedResell === "Yes") {
-			// If the user doesn't want to be pinged for resells, filter them out now.
-			if(userUnwantedKeywords.includes('resell')) {
-				return false;
-			}
-		}
-
-		// If the necessary breed option is absent in this user's preference, filter them out.
-		if(!userBreeds.includes(this.state.selectedBreed)) {
-			return false;
-		}
-
-		// Same for type.
-		if(!userSkinAccent.includes(this.state.selectedType)) {
-			return false;
-		}
-
-		// No preference on keywords + userUnwantedKeywords = user wants any keyword except the unwanted ones.
-		// Else the user wants *matching* keywords strictly
-		if(!userKeywords.includes('no preference')) {
-			if(matchedKeywords.length === 0) {
-				return false;
-			}
-		}
-
-		return true;
-	}
-
-	userWantsPings = (userName) => {
-		return !this.inArray(globalState.doNotPingList,userName,true);
 	}
 
 	resetFilters = (e) => {
@@ -132,42 +62,25 @@ class PinglistSettings extends React.Component {
 		});
 
 		this.updateFilter('selectedBreed',0);
-		this.updateFilter('selectedType',0);
+		this.updateFilter('selectedCoverage',0);
 		this.updateFilter('selectedResell',0);
-	}
-
-	generatePinglist = (e) => {
-		const pinglistArray = [];
-
-		e.target.blur();
-
-		globalState.masterList.forEach(currentUser => {
-			if(this.userWantsPings(currentUser[0].trim())) {
-				if(this.checkPinglistUser(currentUser)) {
-					// user matches the filters, include into pinglist.
-					pinglistArray.push('@'+currentUser[0].trim());
-				}
-			}
-		});
-
-		let pinglistString = "[center][url=http://www1.flightrising.com/forums/skin/2480522]Please click here to go to the GASP thread![/url][br][br]Keywords selected: "+this.state.selectedBreed+', '+this.state.selectedType.substring(0,this.state.selectedType.length-1)+', '+(this.state.selectedResell === 'Yes' ? 'resell, ' : '')+this.state.selectedKeywords.join(', ')+"[br][br][b]Note:[/b] The GASP website was recently rewritten, so this pinglist was generated using entirely new code! [b]PLEASE[/b] be sure to let us know if something is off![/center][br][size=0][size=0][size=0][size=0][size=0]"+pinglistArray.join(' ')+"[/size][/size][/size][/size][/size]";
-
-		this.setState({currentPinglist: pinglistString});
 	}
 
 	render () {
 		return (
 			<Form>
 				<Container>
-					<Row xs="1" sm="1" md="1" lg="1" xl="3" className="PinglistSelectors">
-						<Col>
+					<Row className="PinglistSelectors">
+						<Col xs="12" sm="12" md="12" lg="12" xl={{ size: 4, offset: 0 }}>
 							<Input
 								type="select"
 								name="selectedBreed"
 								value={this.state.isResetting ? 0 : this.state.selectedBreed}
 								onChange={this.onChangeHandler}
 							>
-								<option disabled value="0">Breed / Gender</option>
+								<option disabled value="0">
+									{ globalState.dynamicFields[24][0] }
+								</option>
 								{
 									globalState.breedsData.map((item,index) => (
 										<option key={index} value={item[0]}>{item[0]}</option>
@@ -176,31 +89,53 @@ class PinglistSettings extends React.Component {
 							</Input>
 						</Col>
 
-						<Col>
+						<Col xs="12" sm="12" md="12" lg="12" xl={{ size: 4, offset: 0 }}>
 							<Input
 								type="select"
-								name="selectedType"
-								value={this.state.isResetting ? 0 : this.state.selectedType}
+								name="selectedCoverage"
+								value={this.state.isResetting ? 0 : this.state.selectedCoverage}
 								onChange={this.onChangeHandler}
 							>
-								<option value="0" disabled>Coverage</option>
+								<option value="0" disabled>
+									{ globalState.dynamicFields[25][0] }
+								</option>
 								<option value="Accents">Accent (up to 30%)</option>
 								<option value="Skincents">Skincent (31% to 99%)</option>
 								<option value="Skins">Skin (100%)</option>
 							</Input>
 						</Col>
 
-						<Col>
-							<Input
-								type="select"
-								name="selectedResell"
-								value={this.state.isResetting ? 0 : this.state.selectedResell}
-								onChange={this.onChangeHandler}
-							>
-								<option value="0" disabled>Are you a reseller?</option>
-								<option value="Yes">Yes</option>
-								<option value="No">No</option>
-							</Input>
+						<Col xs="12" sm="12" md="12" lg="12" xl={{ size: 4, offset: 0 }}>
+							<InputGroup>
+								<InputGroupAddon addonType="prepend">
+									<Button className="form-control PopoverResell" onClick={this.handleButton} color="light" id={'PopoverResell'+this.props.id}>
+										<FontAwesomeIcon icon={faQuestionCircle} />
+									</Button>
+
+									<UncontrolledPopover
+										trigger="hover"
+										placement="bottom"
+										isOpen={this.state.popoverOpen}
+										target={'PopoverResell'+this.props.id}
+										toggle={this.popoverToggle.bind(this)}
+									>
+						        <PopoverHeader><span dangerouslySetInnerHTML={{ __html: globalState.dynamicFields[11][0]}}></span></PopoverHeader>
+						        <PopoverBody><span dangerouslySetInnerHTML={{ __html: globalState.dynamicFields[12][0]}}></span></PopoverBody>
+						      </UncontrolledPopover>
+								</InputGroupAddon>
+								<Input
+									type="select"
+									name="selectedResell"
+									value={this.state.isResetting ? 0 : this.state.selectedResell}
+									onChange={this.onChangeHandler}
+								>
+									<option value="0" disabled>
+										{ globalState.dynamicFields[26][0] }
+									</option>
+									<option value="Yes">Yes</option>
+									<option value="No">No</option>
+								</Input>
+							</InputGroup>
 						</Col>
 					</Row>
 
@@ -209,40 +144,6 @@ class PinglistSettings extends React.Component {
 					<Row>
 						<Col>
 							<KeywordForm isReset={this.state.isResetting} onAdjust={this.updateKeywords} />
-						</Col>
-					</Row>
-
-					<Row className="pinglistBtnsRow">
-						<Col>
-							<CopyToClipboard text={this.state.currentPinglist}>
-								<Button
-									className={ this.state.currentPinglist ? 'CopyButton' : 'GenerateButton' }
-									disabled={!this.isGenerationAllowed()}
-									onClick={this.generatePinglist}
-								>
-									{ this.state.currentPinglist ? 'Copy Pinglist' : 'Generate Pinglist' }
-								</Button>
-							</CopyToClipboard>
-						</Col>
-
-						<Col>
-							<Button
-								className="ResetButton"
-								onClick={this.resetFilters}
-							>
-								Reset Filters
-							</Button>
-						</Col>
-					</Row>
-
-					<Row>
-						<Col>
-							<Input
-								className="ReadyPinglistServeContainer"
-								type="textarea"
-								readOnly
-								value={this.state.currentPinglist}
-							/>
 						</Col>
 					</Row>
 				</Container>

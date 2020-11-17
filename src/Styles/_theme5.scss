@@ -1,0 +1,222 @@
+$app_general: (
+  "text": #e2e2e2,
+  "background": #242424
+);
+
+$header: (
+  "background": #1b1b1b,
+  "text": #979797,
+  "link": (
+    "usual": #e2e2e2,
+    "visited": #e2e2e2,
+    "pressed": #c5c5c5,
+    "hover": #c5c5c5
+  )
+);
+
+$app_columns: (
+  "background": (
+    "gradient-bottom": #313131,
+    "gradient-top": #2e2e2e
+  ),
+  "text": #e6e6e6 (header is styled)
+);
+
+$search_keywords: (
+  "container": (
+    "background": #414141,
+    "text": #3d5151
+  ),
+  "button": (
+    "border": #242424,
+    "ordinary": (
+      "background": #9c9c9c,
+      "text": #1b1b1b
+    ),
+    "disabled": (
+      "background": #000,
+      "text": #000
+    ),
+    "hover": (
+      "background": #828282,
+      "text": #1b1b1b
+    ),
+    "selected": (
+      "background": #2e2e2e,
+      "text": #e5e5e5
+    ),
+  )
+);
+
+$volumetric_button: (
+  "ordinary": (
+    "background": (
+      "gradient-bottom": #131313,
+      "gradient-top": #1e1e1e
+    ),
+    "text": #fff,
+    "box-shadow": #0c0c0c,
+    "border": #0c0c0c
+
+  ),
+  "disabled": (
+    "background": (
+      "gradient-bottom": #f1dfd1,
+      "gradient-top": #f6f0ea
+    ),
+    "text": #c0c0c0,
+    "box-shadow": #9dc5c3,
+    "border": #9dc5c3
+  ),
+  "hover": (
+    "background": (
+      "gradient-bottom": #1a1a1a,
+      "gradient-top": #2c2c2c
+    ),
+    "text": #fff,
+    "box-shadow": #0c0c0c,
+    "border": #0c0c0c
+  ),
+  "pressed": (
+    "background": (
+      "gradient-bottom": #111111,
+      "gradient-top": #1c1c1c
+    ),
+    "text": #fff,
+    "box-shadow": #0c0c0c,
+    "border": #0c0c0c
+  )
+);
+
+$generate_button: (
+  "ordinary": (
+    "background": (
+      "gradient-bottom": #131313,
+      "gradient-top": #1e1e1e
+    ),
+    "text": #fff,
+    "box-shadow": #0c0c0c,
+    "border": #0c0c0c
+
+  ),
+  "disabled": (
+    "background": (
+      "gradient-bottom": #f1dfd1,
+      "gradient-top": #f6f0ea
+    ),
+    "text": #c0c0c0,
+    "box-shadow": #9dc5c3,
+    "border": #9dc5c3
+  ),
+  "hover": (
+    "background": (
+      "gradient-bottom": #1a1a1a,
+      "gradient-top": #2c2c2c
+    ),
+    "text": #fff,
+    "box-shadow": #0c0c0c,
+    "border": #0c0c0c
+  ),
+  "pressed": (
+    "background": (
+      "gradient-bottom": #111111,
+      "gradient-top": #1c1c1c
+    ),
+    "text": #fff,
+    "box-shadow": #0c0c0c,
+    "border": #0c0c0c
+  )
+);
+
+$copy_button: (
+  "ordinary": (
+    "background": (
+      "gradient-bottom": #666666,
+      "gradient-top": #9c9c9c
+    ),
+    "text": #fff,
+    "box-shadow": #141414,
+    "border": #141414
+  ),
+  "disabled": (
+    "background": (
+      "gradient-bottom": #f1dfd1,
+      "gradient-top": #f6f0ea
+    ),
+    "text": #c0c0c0,
+    "box-shadow": #9dc5c3,
+    "border": #9dc5c3
+  ),
+  "hover": (
+    "background": (
+      "gradient-bottom": #5f5f5f,
+      "gradient-top": #959595
+    ),
+    "text": #fff,
+    "box-shadow": #141414,
+    "border": #141414
+  ),
+  "pressed": (
+    "background": (
+      "gradient-bottom": #404040,
+      "gradient-top": #636363
+    ),
+    "text": #fff,
+    "box-shadow": #141414,
+    "border": #141414
+  )
+);
+
+$pinglist_textarea: (
+  "background": #242424,
+	"text": #e6e6e6
+);
+
+$search_filter: (
+	"header": (
+		"background": #1b1b1b,
+		"text": #e5e5e5,
+
+		"option_buttons": (
+			"ordinary": (
+				"background": #3f3f3f,
+				"text": #737373
+			),
+			"hover": (
+				"background": #4c4c4c,
+				"text": #737373
+			),
+			"pressed": (
+				"background": #323333,
+				"text": #737373
+			)
+		)
+	),
+	"content": (
+		"background": #242424,
+		"text": #9c9c9c,
+		"selectors": (
+			"background": #9c9c9c,
+			"text": #1b1b1b
+		)
+	),
+	"footer": (
+		"background": #1b1b1b,
+		"text": #e6e6e6
+	)
+);
+
+$back_to_top_button: (
+	"ordinary": (
+		"background": #1b1b1b,
+		"text": #f9f9f9
+	),
+	"hover": (
+		"background": #5b5b5b,
+		"text": #f9f9f9
+	),
+	"pressed": (
+		"background": #9c9c9c,
+		"text": #f9f9f9
+	)
+);

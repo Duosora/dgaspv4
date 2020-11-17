@@ -1,0 +1,236 @@
+$app_general: (
+  "text": #000,
+  "background": #dad6c8
+);
+
+$header: (
+  "background": #731d08,
+  "text": #fff,
+  "link": (
+    "usual": #fecd66,
+    "visited": #fecd66,
+    "pressed": #fbe687,
+    "hover": #fbe687
+  )
+);
+
+$app_headings: (
+  "outline": #732222,
+  "shadow": rgba(0,0,0,0.34),
+  "text": #fff
+);
+
+$app_columns: (
+  "background": (
+    "gradient-bottom": #f9f8f7,
+    "gradient-top": #f9f8f7
+  ),
+  "text": #1a2323
+);
+
+$search_keywords: (
+  "container": (
+    "background": #e8e5d8,
+    "text": #3d5151
+  ),
+  "button": (
+    "border": #731d08,
+    "ordinary": (
+      "background": #fff,
+      "text": #3d5151
+    ),
+    "disabled": (
+      "background": #000,
+      "text": #000
+    ),
+    "hover": (
+      "background": #fcf5be,
+      "text": #3d5151
+    ),
+    "selected": (
+      "background": #731d08,
+      "text": #fecd66
+    ),
+  )
+);
+
+$volumetric_button: (
+  "outline": #732222,
+  "shadow": rgba(0,0,0,0.34),
+
+  "ordinary": (
+    "background": (
+      "gradient-bottom": #f8c85a,
+      "gradient-top": #f9e587
+    ),
+    "text": #fff,
+    "box-shadow": #805d35,
+    "border": #805d35
+
+  ),
+  "disabled": (
+    "background": (
+      "gradient-bottom": #f1dfd1,
+      "gradient-top": #f6f0ea
+    ),
+    "text": #c0c0c0,
+    "box-shadow": #9dc5c3,
+    "border": #9dc5c3
+  ),
+  "hover": (
+    "background": (
+      "gradient-bottom": #fce15d,
+      "gradient-top": #fdf28c
+    ),
+    "text": #fff,
+    "box-shadow": #805d35,
+    "border": #805d35
+  ),
+  "pressed": (
+    "background": (
+      "gradient-bottom": #f4b03a,
+      "gradient-top": #f7cd57
+    ),
+    "text": #fff,
+    "box-shadow": #805d35,
+    "border": #805d35
+  )
+);
+
+$generate_button: (
+  "outline": #732222,
+  "shadow": rgba(0,0,0,0.34),
+
+  "ordinary": (
+    "background": (
+      "gradient-bottom": #f8c85a,
+      "gradient-top": #f9e587
+    ),
+    "text": #fff,
+    "box-shadow": #805d35,
+    "border": #805d35
+  ),
+  "disabled": (
+    "background": (
+      "gradient-bottom": #f1dfd1,
+      "gradient-top": #f6f0ea
+    ),
+    "text": #c0c0c0,
+    "box-shadow": #9dc5c3,
+    "border": #9dc5c3
+  ),
+  "hover": (
+    "background": (
+      "gradient-bottom": #fce15d,
+      "gradient-top": #fdf28c
+    ),
+    "text": #fff,
+    "box-shadow": #805d35,
+    "border": #805d35
+  ),
+  "pressed": (
+    "background": (
+      "gradient-bottom": #f4b03a,
+      "gradient-top": #f7cd57
+    ),
+    "text": #fff,
+    "box-shadow": #805d35,
+    "border": #805d35
+  )
+);
+
+$copy_button: (
+  "outline": #732222,
+  "shadow": rgba(0,0,0,0.34),
+
+  "ordinary": (
+    "background": (
+      "gradient-bottom": #710100,
+      "gradient-top": #a40906
+    ),
+    "text": #fff,
+    "box-shadow": #460300,
+    "border": #460300
+  ),
+  "disabled": (
+    "background": (
+      "gradient-bottom": #f1dfd1,
+      "gradient-top": #f6f0ea
+    ),
+    "text": #c0c0c0,
+    "box-shadow": #9dc5c3,
+    "border": #9dc5c3
+  ),
+  "hover": (
+    "background": (
+      "gradient-bottom": #940100,
+      "gradient-top": #c20705
+    ),
+    "text": #fff,
+    "box-shadow": #460300,
+    "border": #460300
+  ),
+  "pressed": (
+    "background": (
+      "gradient-bottom": #5b0000,
+      "gradient-top": #860504
+    ),
+    "text": #fff,
+    "box-shadow": #460300,
+    "border": #460300
+  )
+);
+
+$pinglist_textarea: (
+  "background": #fff,
+	"text": #1a2323
+);
+
+$search_filter: (
+	"header": (
+		"background": #731d08,
+		"text": #f2eee5,
+
+		"option_buttons": (
+			"ordinary": (
+				"background": #eae6e2,
+				"text": #1a2323
+			),
+			"hover": (
+				"background": #eee,
+				"text": #1a2323
+			),
+			"pressed": (
+				"background": #c5c5c5,
+				"text": #1a2323
+			)
+		)
+	),
+	"content": (
+		"background": #7c746d,
+		"text": #1a2323,
+		"selectors": (
+			"background": #fff,
+			"text": #000
+		)
+	),
+	"footer": (
+		"background": #731d08,
+		"text": #f2eee5
+	)
+);
+
+$back_to_top_button: (
+	"ordinary": (
+		"background": #731d08,
+		"text": #f5fafa
+	),
+	"hover": (
+		"background": #940604,
+		"text": #f5fafa
+	),
+	"pressed": (
+		"background": #630100,
+		"text": #f5fafa
+	)
+);
