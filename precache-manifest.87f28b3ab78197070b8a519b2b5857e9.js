@@ -1,18 +1,18 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "740e79b518bae01d2231666588a5c6e6",
+    "revision": "4d89af2bf96ccc4484e12a98407260dd",
     "url": "/dgaspv4/index.html"
   },
   {
-    "revision": "a1c8d086b8eb3d57e808",
-    "url": "/dgaspv4/static/css/2.af3c1da9.chunk.css"
+    "revision": "cd526c0b4fd496467731",
+    "url": "/dgaspv4/static/css/2.12795900.chunk.css"
   },
   {
-    "revision": "a6bfdf4b138b527e8b0c",
-    "url": "/dgaspv4/static/css/main.723d3175.chunk.css"
+    "revision": "805bdf0899745cc21f6d",
+    "url": "/dgaspv4/static/css/main.33e32093.chunk.css"
   },
   {
-    "revision": "a1c8d086b8eb3d57e808",
+    "revision": "cd526c0b4fd496467731",
     "url": "/dgaspv4/static/js/2.6914b97f.chunk.js"
   },
   {
@@ -20,7 +20,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/dgaspv4/static/js/2.6914b97f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "a6bfdf4b138b527e8b0c",
+    "revision": "805bdf0899745cc21f6d",
     "url": "/dgaspv4/static/js/main.fd460278.chunk.js"
   },
   {
