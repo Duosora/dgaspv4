@@ -30,3 +30,15 @@
 	font-weight: 800;
 	font-size: 22px;
 }
+
+.popover, .popover-body {
+	pointer-events: none;
+}
+
+b {
+	font-weight: 500;
+}
+
+strong {
+	font-weight: 800;
+}

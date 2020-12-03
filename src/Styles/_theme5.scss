@@ -1,6 +1,12 @@
 $app_general: (
   "text": #e2e2e2,
-  "background": #242424
+  "background": #242424,
+  "link": (
+    "usual": #7d8b9f,
+    "visited": #7d8b9f,
+    "pressed": #647388,
+    "hover": #647388
+  )
 );
 
 $header: (
@@ -12,6 +18,12 @@ $header: (
     "pressed": #c5c5c5,
     "hover": #c5c5c5
   )
+);
+
+$app_headings: (
+  "outline": #732222,
+  "shadow": rgba(0,0,0,0.34),
+  "text": #bcbcbc
 );
 
 $app_columns: (
@@ -49,12 +61,15 @@ $search_keywords: (
 );
 
 $volumetric_button: (
+  "outline": transparent,
+  "shadow": transparent,
+
   "ordinary": (
     "background": (
       "gradient-bottom": #131313,
       "gradient-top": #1e1e1e
     ),
-    "text": #fff,
+    "text": #9c9c9c,
     "box-shadow": #0c0c0c,
     "border": #0c0c0c
 
@@ -73,7 +88,7 @@ $volumetric_button: (
       "gradient-bottom": #1a1a1a,
       "gradient-top": #2c2c2c
     ),
-    "text": #fff,
+    "text": #9c9c9c,
     "box-shadow": #0c0c0c,
     "border": #0c0c0c
   ),
@@ -82,19 +97,22 @@ $volumetric_button: (
       "gradient-bottom": #111111,
       "gradient-top": #1c1c1c
     ),
-    "text": #fff,
+    "text": #9c9c9c,
     "box-shadow": #0c0c0c,
     "border": #0c0c0c
   )
 );
 
 $generate_button: (
+  "outline": transparent,
+  "shadow": transparent,
+
   "ordinary": (
     "background": (
       "gradient-bottom": #131313,
       "gradient-top": #1e1e1e
     ),
-    "text": #fff,
+    "text": #9c9c9c,
     "box-shadow": #0c0c0c,
     "border": #0c0c0c
 
@@ -113,7 +131,7 @@ $generate_button: (
       "gradient-bottom": #1a1a1a,
       "gradient-top": #2c2c2c
     ),
-    "text": #fff,
+    "text": #9c9c9c,
     "box-shadow": #0c0c0c,
     "border": #0c0c0c
   ),
@@ -122,19 +140,22 @@ $generate_button: (
       "gradient-bottom": #111111,
       "gradient-top": #1c1c1c
     ),
-    "text": #fff,
+    "text": #9c9c9c,
     "box-shadow": #0c0c0c,
     "border": #0c0c0c
   )
 );
 
 $copy_button: (
+  "outline": transparent,
+  "shadow": transparent,
+
   "ordinary": (
     "background": (
       "gradient-bottom": #666666,
       "gradient-top": #9c9c9c
     ),
-    "text": #fff,
+    "text": #9c9c9c,
     "box-shadow": #141414,
     "border": #141414
   ),
@@ -152,7 +173,7 @@ $copy_button: (
       "gradient-bottom": #5f5f5f,
       "gradient-top": #959595
     ),
-    "text": #fff,
+    "text": #9c9c9c,
     "box-shadow": #141414,
     "border": #141414
   ),
@@ -161,7 +182,7 @@ $copy_button: (
       "gradient-bottom": #404040,
       "gradient-top": #636363
     ),
-    "text": #fff,
+    "text": #9c9c9c,
     "box-shadow": #141414,
     "border": #141414
   )
@@ -176,6 +197,8 @@ $search_filter: (
 	"header": (
 		"background": #1b1b1b,
 		"text": #e5e5e5,
+    "ineligible_color": #ff0000,
+    "eligible_color": #68d968,
 
 		"option_buttons": (
 			"ordinary": (

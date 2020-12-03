@@ -125,11 +125,6 @@ class PinglistGen extends React.Component {
 		const keywordsSeparator = globalState.dynamicFields[4][0];
 		let pinglistString = '';
 		let preparedKeywords = '';
-		const eventTarget = e.target;
-
-		setTimeout(() => {
-			eventTarget.blur();
-		},380);
 
 		this.state.pinglistGenerators.forEach((item, index) => {
 			if(item.eligible) {
@@ -426,8 +421,6 @@ class PinglistGen extends React.Component {
 				{this.state.pinglistGenerators.map((item,index) => (
 						this.constructPinglistFilter(item,index)
 				))}
-
-				<hr/>
 
 				<span dangerouslySetInnerHTML={{ __html: this.generatorCount === 0 ? globalState.dynamicFields[13][0] : (this.state.pinglistGenerators.length === 0 ? globalState.dynamicFields[14][0] : globalState.dynamicFields[15][0])}}></span>
 

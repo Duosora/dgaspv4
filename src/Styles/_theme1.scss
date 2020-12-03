@@ -1,6 +1,12 @@
 $app_general: (
   "text": #000,
-  "background": #b6c8a9
+  "background": #b6c8a9,
+  "link": (
+    "usual": #2a223a,
+    "visited": #2a223a,
+    "pressed": #403954,
+    "hover": #403954
+  )
 );
 
 $header: (
@@ -190,6 +196,8 @@ $search_filter: (
 	"header": (
 		"background": #2a223a,
 		"text": #f5fafa,
+    "ineligible_color": #ff0000,
+    "eligible_color": #68d968,
 
 		"option_buttons": (
 			"ordinary": (
