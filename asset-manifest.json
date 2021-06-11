@@ -1,25 +1,23 @@
 {
   "files": {
-    "main.css": "/dgaspv4/static/css/main.a0162ee4.chunk.css",
-    "main.js": "/dgaspv4/static/js/main.68847b3c.chunk.js",
-    "main.js.map": "/dgaspv4/static/js/main.68847b3c.chunk.js.map",
-    "runtime-main.js": "/dgaspv4/static/js/runtime-main.5ddc8ed7.js",
-    "runtime-main.js.map": "/dgaspv4/static/js/runtime-main.5ddc8ed7.js.map",
-    "static/css/2.12795900.chunk.css": "/dgaspv4/static/css/2.12795900.chunk.css",
-    "static/js/2.5ec00eba.chunk.js": "/dgaspv4/static/js/2.5ec00eba.chunk.js",
-    "static/js/2.5ec00eba.chunk.js.map": "/dgaspv4/static/js/2.5ec00eba.chunk.js.map",
-    "index.html": "/dgaspv4/index.html",
-    "precache-manifest.53f9f3b0cf7147a269434a5b8b5964ca.js": "/dgaspv4/precache-manifest.53f9f3b0cf7147a269434a5b8b5964ca.js",
-    "service-worker.js": "/dgaspv4/service-worker.js",
-    "static/css/2.12795900.chunk.css.map": "/dgaspv4/static/css/2.12795900.chunk.css.map",
-    "static/css/main.a0162ee4.chunk.css.map": "/dgaspv4/static/css/main.a0162ee4.chunk.css.map",
-    "static/js/2.5ec00eba.chunk.js.LICENSE.txt": "/dgaspv4/static/js/2.5ec00eba.chunk.js.LICENSE.txt"
+    "main.css": "/dgaspv4-test/static/css/main.b7334346.chunk.css",
+    "main.js": "/dgaspv4-test/static/js/main.0e2bba77.chunk.js",
+    "main.js.map": "/dgaspv4-test/static/js/main.0e2bba77.chunk.js.map",
+    "runtime-main.js": "/dgaspv4-test/static/js/runtime-main.a94e93d2.js",
+    "runtime-main.js.map": "/dgaspv4-test/static/js/runtime-main.a94e93d2.js.map",
+    "static/css/2.61b4cb56.chunk.css": "/dgaspv4-test/static/css/2.61b4cb56.chunk.css",
+    "static/js/2.026d9922.chunk.js": "/dgaspv4-test/static/js/2.026d9922.chunk.js",
+    "static/js/2.026d9922.chunk.js.map": "/dgaspv4-test/static/js/2.026d9922.chunk.js.map",
+    "index.html": "/dgaspv4-test/index.html",
+    "static/css/2.61b4cb56.chunk.css.map": "/dgaspv4-test/static/css/2.61b4cb56.chunk.css.map",
+    "static/css/main.b7334346.chunk.css.map": "/dgaspv4-test/static/css/main.b7334346.chunk.css.map",
+    "static/js/2.026d9922.chunk.js.LICENSE.txt": "/dgaspv4-test/static/js/2.026d9922.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.5ddc8ed7.js",
-    "static/css/2.12795900.chunk.css",
-    "static/js/2.5ec00eba.chunk.js",
-    "static/css/main.a0162ee4.chunk.css",
-    "static/js/main.68847b3c.chunk.js"
+    "static/js/runtime-main.a94e93d2.js",
+    "static/css/2.61b4cb56.chunk.css",
+    "static/js/2.026d9922.chunk.js",
+    "static/css/main.b7334346.chunk.css",
+    "static/js/main.0e2bba77.chunk.js"
   ]
 }
